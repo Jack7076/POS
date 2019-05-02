@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,IAAI;CAClB;;AACD,AAAA,IAAI,CAAC,GAAG,CAAC;EACL,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "nojavascript.scss"
+    ],
+    "names": [],
+    "file": "nojavascript.css"
+}
