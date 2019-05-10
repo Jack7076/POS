@@ -29,10 +29,10 @@
         <div class="cart">
             <div class="item-matrix">
             <h1>Cart</h1>
-                <ul>
-                    <li>Example Item 1</li>
-                    <li>Example Item 2</li>
-                    <li>Example Item 3</li>
+                <ul id="cart-itm-list">
+                    <li data-itemno="1"><span class="quantity">1</span> Example Item 1 <span class="price">9.99</span></li>
+                    <li data-itemno="2"><span class="quantity">1</span> Example Item 2 <span class="price">7.99</span></li>
+                    <li data-itemno="3"><span class="quantity">1</span> Example Item 3 <span class="price">19.99</span></li>
                 </ul>
                 <div class="sale-control">
                     <div class="row">
@@ -47,5 +47,7 @@
             <p>&copy; Prozel Cloud Solutions. <?php echo date("Y"); ?>. All Rights Reserved.</p>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script/cartControl.js"></script>
 </body>
 </html>

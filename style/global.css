@@ -21,6 +21,10 @@
   background-color: #48acef;
 }
 
+.bg-edit {
+  background-color: #ffc107;
+}
+
 /* Begin: Navbar */
 #nav {
   width: 100%;
@@ -62,8 +66,8 @@
   background-color: #bdc3c7;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 90px auto 550px;
-      grid-template-columns: 90px auto 550px;
+  -ms-grid-columns: 90px auto 350px;
+      grid-template-columns: 90px auto 350px;
   -ms-grid-rows: 75px auto 50px;
       grid-template-rows: 75px auto 50px;
 }
@@ -154,6 +158,21 @@
 
 #pos .cart .item-matrix ul li {
   padding: 7px;
+  background-color: #fefefe;
+  border-top: 1px solid #0e0e0e;
+  text-align: left;
+}
+
+#pos .cart .item-matrix ul li .quantity {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #e2cfcf;
+  font-weight: 700;
+}
+
+#pos .cart .item-matrix ul li .price {
+  float: right;
+  padding-right: 5px;
 }
 
 #pos .cart .item-matrix .sale-control {
