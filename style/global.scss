@@ -1,90 +1,189 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+/* Vars */
+$primary-color: #3498db;
+$background-color: #bdc3c7;
+$font: "Open Sans", sans-serif;
+$nav-size: 75px;
+$footer-color: #34495e;
+$cart-color: #ecf0f1;
+/* Global Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
 }
-#pageTitleAttr {
-    display: none;
-}
-#pageStyleRequest {
-    display: none;
-}
-#navbar {
-    width: 100%;
-    height: 50px;
-    background-color: #336065;
-    position: fixed;
-    overflow: hidden;
-}
-#nav-burger {
-    display: none;
-}
-#navbar .logo {
-    font-weight: 700;
-    float: left;
-    color: #fefefe;
-    padding: 15px 15px;
-    font-weight: 1.2em;
-    font-family: "Source Code Pro", monospace;
-}
-#navbar .navigation{
-    float: right;
-}
-#navbar .navigation ul{
-    list-style: none;
-}
-#navbar .navigation ul li{
-    font-family: "Open Sans", sans-serif;
-    display: inline-block;
-    padding: 16px 15px;
-    transition: 0.2s;
-}
-#navbar .navigation ul li:hover {
-    background-color: #25565c;
-    transition: 0.2s;
-}
-#navbar .navigation ul .active {
-    background-color: #25565c;
-}
-#navbar .navigation ul li a{
-    color: rgb(185, 185, 185);
+.btn {
+    background-color: $primary-color;
+    border-radius: 5px;
+    color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
+    padding: 7px 12px;
 }
-.navigationspacing {
-    height: 50px;
+.btn:hover {
+    background-color: $primary-color + 20;
+}
+/* Begin: Navbar */
+$nav-padding: 27px;
+#nav {
     width: 100%;
-}
-#footer{
-    text-align: center;
-    padding: 50px;
-    background-color: #232323;
+    height: $nav-size;
+    background-color: $primary-color;
     color: #fefefe;
-    font-family: "Open Sans", sans-serif;
+    grid-column-end: 4;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
-
-@media only screen and (max-width: 600px){
-    #nav-burger {
-        display: block;
+#nav {
+    .brand {
+        float: left;
+        font-weight: 700;
+        font-size: 1.2em;
+        padding: $nav-padding;
+    }
+    .control {
         float: right;
-        padding: 15px;
+        padding: $nav-padding;
+        cursor: pointer;
     }
-    #nav-burger a {
-        color: #fefefe;
-        text-decoration: none;
-        font-size: 1.6em;
-    }
-    #navbar {
-        height: 300px;
-        transition: 0.2s;
-    }
-    #navbar .navigation ul li:first-child{
-        margin-top: 60px;
-    }
-    #navbar .navigation ul li{
-        display: block;
-        width: 100%;
+    .control:hover {
+        background-color: $primary-color + 20;
     }
 }
+/* End: Navbar */
+/* Begin: Pos / Content */
+#pos {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: $background-color;
+    display: grid;
+    grid-template-columns: 90px auto 550px;
+    grid-template-rows: $nav-size auto 50px;
+}
+%grid-row-2 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+#pos {
+    .sidebar {
+        @extend %grid-row-2;
+        grid-column-start: 1;
+        grid-column-end: 1;
+        background-color: $primary-color;
+        text-align: center;
+        color: #fff;
+    }
+    .sidebar ul {
+        list-style: none;
+    }
+    .sidebar ul li a:hover {
+        background-color: $primary-color + 20;
+    }
+    .sidebar ul li {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .sidebar ul li a {
+        color: #fff;
+        font-size: 1.2em;
+        $sidebar-content-pad: 34px;
+        padding: 15px $sidebar-content-pad;
+    }
+    .products {
+        @extend %grid-row-2;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        padding: 25px;
+    }
+    .cart {
+        @extend %grid-row-2;
+        grid-column-start: 3;
+        grid-column-end: 3;
+        background-color: $cart-color;
+    }
+    .cart {
+        .item-matrix {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 50px auto 180px;
+            height: 100%;
+        }
+        %item-matrix-row-2 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .item-matrix {
+            h1 {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                text-align: center;
+                width: 100%;
+            }
+            ul {
+                @extend %item-matrix-row-2;
+                list-style: none;
+                text-align: center;
+                width: 100%;
+            }
+            ul {
+                li {
+                    padding: 7px;
+                }
+            }
+            .sale-control {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                background-color: $footer-color;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: 50px 50px auto;
+                padding-top: 15px;
+            }
+            .sale-control {
+                .row {
+                    display: grid;
+                    grid-template-columns: auto 150px;
+                    grid-template-rows: auto;
+                }
+                .row {
+                    .left {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                    }
+                    .right {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                    }
+                }
+            }
+        }
+        
+    }
+    // Begin Footer
+    #footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        text-align: center;
+        color: #fefefe;
+        background-color: $footer-color;
+    }
+    #footer p {
+        padding-top: 15px;
+    }
+    // End Footer
+}
+/* End: Pos / Content */
