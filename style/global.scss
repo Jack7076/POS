@@ -101,6 +101,44 @@ $nav-padding: 27px;
         grid-column-end: 2;
         padding: 25px;
     }
+    .products {
+        .search {
+            width: 100%;
+            padding-bottom: 10px;
+        }
+        .search {
+            #searchbox {
+                width: 100%;
+            }
+        }
+        .product {
+            width: 150px;
+            height: 130px;
+            background-color: #fefefe;
+            padding: 15px;
+            padding-bottom: 29px;
+            margin-right: 15px;
+            display: inline-block;
+            transform: translateZ(0);
+            -webkit-font-smoothing: 
+        }
+        .product:hover {
+            background-color: #fefefe + 20;
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+        .product {
+            img {
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+            p {
+                z-index: 5;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
     .cart {
         @extend %grid-row-2;
         grid-column-start: 3;

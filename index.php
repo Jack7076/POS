@@ -24,7 +24,19 @@
             </ul>
         </div>
         <div class="products">
-            Products
+            <div class="search"><input type="text" id="searchbox" placeholder="Search"></div>
+            <div class="product">
+                <img src="assets/lobster.jpg" alt="product Image">
+                <p>Iraq Lobster</p>
+            </div>
+            <div class="product">
+                <img src="assets/lobster.jpg" alt="product Image">
+                <p>Iraq Lobster</p>
+            </div>
+            <div class="product">
+                <img src="assets/lobster.jpg" alt="product Image">
+                <p>Iraq Lobster</p>
+            </div>
         </div>
         <div class="cart">
             <div class="item-matrix">
