@@ -50,6 +50,7 @@ $(document).on("click", ".close-main-modal", (e) => {
 });
 
 $(document).on("click", ".product", (e) => {
+    e.preventDefault();
     el = e.currentTarget;
     itemid = $(el).attr("data-product-id");
     itemname = $(el).attr("data-product-name");
@@ -85,7 +86,7 @@ var addProduct = (quantity, price, name, id) => {
     }
     var template = '<li data-itemno="ITEMID"><span class="quantity">QUANTIYNUMBER</span><span class="item-name">ITEMNAME</span><span class="price">ITEMPRICE</span></li>';
     template = template.replace("QUANTIYNUMBER", quantity);
-    template = template.replace("ITEMPRICE", price);
+    template = template.replace("ITEMPRICE", formatPrice(price));
     template = template.replace("ITEMNAME", name);
     template = template.replace("ITEMID", id);
     cart.append(template);

@@ -123,6 +123,7 @@ $nav-padding: 27px;
             margin-right: 15px;
             display: inline-block;
             transform: translateZ(0);
+            user-select: none;
         }
         .product:hover {
             background-color: #0e0e0e;

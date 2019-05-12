@@ -135,6 +135,10 @@
   display: inline-block;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #pos .products .product:hover {
