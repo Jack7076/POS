@@ -111,6 +111,7 @@
       grid-column-start: 2;
   grid-column-end: 2;
   padding: 25px;
+  overflow: auto;
 }
 
 #pos .products .search {
@@ -120,6 +121,8 @@
 
 #pos .products .search #searchbox {
   width: 100%;
+  padding: 10px;
+  font-size: 1.1em;
 }
 
 #pos .products .product {
@@ -135,9 +138,11 @@
 }
 
 #pos .products .product:hover {
-  background-color: white;
-  -webkit-transform: scale3d(1.1, 1.1, 1.1);
-          transform: scale3d(1.1, 1.1, 1.1);
+  background-color: #0e0e0e;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #fefefe;
+  cursor: pointer;
 }
 
 #pos .products .product img {
@@ -157,6 +162,7 @@
       grid-column-start: 3;
   grid-column-end: 3;
   background-color: #ecf0f1;
+  overflow: auto;
 }
 
 #pos .cart .item-matrix {
@@ -214,6 +220,10 @@
   padding-right: 5px;
 }
 
+#pos .cart .item-matrix ul li .item-name:hover {
+  cursor: pointer;
+}
+
 #pos .cart .item-matrix .sale-control {
   -ms-grid-column: 1;
       grid-column-start: 1;
@@ -247,6 +257,8 @@
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
+  text-align: left;
+  padding-left: 24px;
 }
 
 #pos .cart .item-matrix .sale-control .row .right {
@@ -272,4 +284,50 @@
 }
 
 /* End: Pos / Content */
+/* Begin: Modal */
+.modal {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-sizing: unset;
+          box-sizing: unset;
+}
+
+.modal .modal-main {
+  background-color: #3498db;
+  margin: 15vh;
+  text-align: center;
+}
+
+.modal .modal-main .modal-header {
+  padding-top: 25px;
+}
+
+.modal .modal-main .close {
+  font-size: 4em;
+  padding: 0;
+  float: right;
+  font-weight: 700;
+  margin-right: 35px;
+  z-index: 1001;
+}
+
+.modal .modal-main .close:hover {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #fefefe;
+}
+
+.modal .modal-main .modal-content {
+  padding-bottom: 15px;
+}
+
+/* End: Modal */
 /*# sourceMappingURL=global.css.map */

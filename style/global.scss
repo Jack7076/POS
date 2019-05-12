@@ -100,6 +100,7 @@ $nav-padding: 27px;
         grid-column-start: 2;
         grid-column-end: 2;
         padding: 25px;
+        overflow: auto;
     }
     .products {
         .search {
@@ -109,6 +110,8 @@ $nav-padding: 27px;
         .search {
             #searchbox {
                 width: 100%;
+                padding: 10px;
+                font-size: 1.1em;
             }
         }
         .product {
@@ -120,11 +123,12 @@ $nav-padding: 27px;
             margin-right: 15px;
             display: inline-block;
             transform: translateZ(0);
-            -webkit-font-smoothing: 
         }
         .product:hover {
-            background-color: #fefefe + 20;
-            transform: scale3d(1.1, 1.1, 1.1);
+            background-color: #0e0e0e;
+            transition: 0.2s;
+            color: #fefefe;
+            cursor: pointer;
         }
         .product {
             img {
@@ -144,6 +148,7 @@ $nav-padding: 27px;
         grid-column-start: 3;
         grid-column-end: 3;
         background-color: $cart-color;
+        overflow: auto;
     }
     .cart {
         .item-matrix {
@@ -191,6 +196,9 @@ $nav-padding: 27px;
                         float: right;
                         padding-right: 5px;
                     }
+                    .item-name:hover {
+                        cursor: pointer;
+                    }
                 }
             }
             .sale-control {
@@ -217,6 +225,8 @@ $nav-padding: 27px;
                     .left {
                         grid-column-start: 1;
                         grid-column-end: 2;
+                        text-align: left;
+                        padding-left: 24px;
                     }
                     .right {
                         grid-column-start: 2;
@@ -243,3 +253,45 @@ $nav-padding: 27px;
     // End Footer
 }
 /* End: Pos / Content */
+/* Begin: Modal */
+.modal {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    box-sizing: unset;
+}
+.modal {
+    .modal-main {
+        background-color: $primary-color;
+        margin: 15vh;
+        text-align: center;
+    }
+    .modal-main {
+        .modal-header {
+            padding-top: 25px;
+        }
+        .close {
+            font-size: 4em;
+            padding: 0;
+            float: right;
+            font-weight: 700;
+            margin-right: 35px;
+            z-index: 1001;
+        }
+        .close:hover {
+            cursor: pointer;
+            transition: 0.2s;
+            color: #fefefe;
+        }
+        .modal-content {
+            padding-bottom: 15px;
+        }
+    }
+}
+/* End: Modal */
