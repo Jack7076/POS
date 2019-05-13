@@ -26,6 +26,9 @@ $cart-color: #ecf0f1;
 .bg-edit {
     background-color: #ffc107;
 }
+.hidden {
+    display: none;
+}
 /* Begin: Navbar */
 $nav-padding: 27px;
 #nav {
@@ -49,6 +52,9 @@ $nav-padding: 27px;
         float: right;
         padding: $nav-padding;
         cursor: pointer;
+        i {
+            padding-right: 5px;
+        }
     }
     .control:hover {
         background-color: $primary-color + 20;
@@ -68,13 +74,13 @@ $nav-padding: 27px;
 }
 %grid-row-2 {
     grid-row-start: 2;
-    grid-row-end: 2;
+    grid-row-end: 3;
 }
 #pos {
     .sidebar {
         @extend %grid-row-2;
         grid-column-start: 1;
-        grid-column-end: 1;
+        grid-column-end: 2;
         background-color: $primary-color;
         text-align: center;
         color: #fff;
@@ -121,6 +127,7 @@ $nav-padding: 27px;
             padding: 15px;
             padding-bottom: 29px;
             margin-right: 15px;
+            margin-bottom: 15px;
             display: inline-block;
             transform: translateZ(0);
             user-select: none;
@@ -276,6 +283,7 @@ $nav-padding: 27px;
     .modal-main {
         .modal-header {
             padding-top: 25px;
+            padding-bottom: 25px;
         }
         .close {
             font-size: 4em;
@@ -285,13 +293,29 @@ $nav-padding: 27px;
             margin-right: 35px;
             z-index: 1001;
         }
-        .close:hover {
+        .close:hover,
+        .close:focus {
             cursor: pointer;
             transition: 0.2s;
             color: #fefefe;
         }
         .modal-content {
             padding-bottom: 15px;
+        }
+        .modal-content {
+            .form-control {
+                width: 100%;
+                padding: 15px;
+                text-align: right;
+            }
+            .form-control {
+                label {
+                    width: 25%;
+                }
+                input {
+                    width: 75%;
+                }
+            }
         }
     }
 }

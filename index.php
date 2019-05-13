@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+    <!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POS Direct - Prozel Cloud Solutions</title>
     <link rel="stylesheet" href="style/global.css" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/fa/all.css">
 </head>
 <body>
     <div id="pos">
         <div id="nav">
             <div class="brand">POS Direct</div>
             <div class="control">
-                <i class="fa fa-user"></i> Jack (jack@prozel.net) <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user"></i> Jack (jack@prozel.net)
             </div>
         </div>
         <div class="sidebar">
@@ -24,19 +24,7 @@
             </ul>
         </div>
         <div class="products">
-            <div class="search"><input type="text" id="searchbox" placeholder="Search"></div>
-            <div class="product" data-product-id="1" data-product-name="Big Lobie" data-product-price="9.90">
-                <img src="assets/lobster.jpg" alt="product Image">
-                <p>Big Lobie</p>
-            </div>
-            <div class="product" data-product-id="2" data-product-name="Normal Lobie" data-product-price="5.90">
-                <img src="assets/lobster.jpg" alt="product Image">
-                <p>Normal Lobie</p>
-            </div>
-            <div class="product" data-product-id="3" data-product-name="Small Lobie" data-product-price="3.90">
-                <img src="assets/lobster.jpg" alt="product Image">
-                <p>Small Lobie</p>
-            </div>
+            Loading Products ...
         </div>
         <div class="cart">
             <div class="item-matrix">
@@ -53,7 +41,7 @@
                         <br>
                             Total: $<span id="sale-total-tag">0.00</span>
                         </div>
-                        <div class="right"><a href="#" class="btn">Button</a></div>
+                        <div class="right"><a href="#" class="btn">Pay Now</a></div>
                     </div>
                     
                 </div>

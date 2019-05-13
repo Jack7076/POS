@@ -2,8 +2,12 @@ var cart = $("#cart-itm-list");
 
 $(document).ready(() => {
     setTotal();
+    updateProducts();
+    setInterval(updateProducts, 10000);
 });
-
+$(document).on("keydown", "*", (e) => {
+    console.log({e});
+});
 $(document).on("click", ".price", (e) => {
     e.preventDefault();
     var el = e.toElement;
@@ -40,9 +44,37 @@ $(document).on("focusout", ".quantity", (e) => {
     setTotal();
 });
 
+$(document).on("click", ".control", (e) => {
+    openModal("User Options", "Will add logout chng pass etc ...");
+});
+
 $(document).on("click", ".item-name", (e) => {
+    e.preventDefault();
     target = e.target;
-    openModal("Edit Item", "This will allow you to edit items in the cart");
+    itmcartid = $(target).parent().attr("data-itemno");
+    openModal("Edit Item", "<div id='prim-modal-action' class='hidden edit-item-cart-id' data-action='edit-item'>"
+     + itmcartid + 
+     `</div>
+        <div class="form-control">
+        <label>Name:</label> <input class="cart-item-name">
+        </div>
+        <div class="form-control">
+        <label>Price:</label> <input class="cart-item-price">
+        </div>
+        <div class="form-control">
+        <label>Quantity:</label> <input class="cart-item-quanity" type="number">
+        </div>
+        <div class="form-control">
+        <input type="button" value="Remove from cart" class="rmITMcardBTN" data-itmid="` + itmcartid + `">
+        </div>
+     `);
+});
+
+$(document).on("click", ".rmITMcardBTN", (e) => {
+    e.preventDefault();
+    el = e.currentTarget;
+    removeProduct($(el).attr("data-itmid"));
+    closeModal();
 });
 
 $(document).on("click", ".close-main-modal", (e) => {
@@ -57,6 +89,19 @@ $(document).on("click", ".product", (e) => {
     itemprice = $(el).attr("data-product-price");
     addProduct("1", itemprice, itemname, itemid);
 });
+
+var removeProduct = (id) => {
+    var itms = $("#cart-itm-list").find("li");
+
+    for(let i = 0; i < itms.length; i++){
+        if( $(itms[i]).attr("data-itemno") == id){
+            $(itms[i]).remove();
+            break;
+        }
+        continue;
+    }
+    setTotal(); 
+}
 
 var addProduct = (quantity, price, name, id) => {
 
@@ -139,8 +184,16 @@ var calcTax = (val) => {
 }
 
 var openModal = (title, content) => {
-    $("#prim-modal .modal-main .modal-header").text(title);
-    $("#prim-modal .modal-main .modal-content").text(content);
+    $("#prim-modal .modal-main .modal-header").html(title);
+    $("#prim-modal .modal-main .modal-content").html(content);
+    if($("#prim-modal-action").length){
+        if($("#prim-modal-action").attr("data-action") == "edit-item"){
+
+        }
+    }
+
+    
+    
     $("#prim-modal").show();
 }
 
@@ -170,4 +223,7 @@ var filter = (str) => {
     // Remove all characters except for 0 to 9 and decimals
     str = str.replace(/[^0-9.]/g, "");
     return str;
+}
+var updateProducts = () => {
+    $(".products").load("api/loadProducts.php");
 }
