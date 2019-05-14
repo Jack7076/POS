@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style/global.css" type="text/css">
 </head>
 <body>
-    
+    <div id="authenticate">
+        <div class="wrapper">
+            <form type="POST" class="authenticateForm">
+                <input type="text">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
