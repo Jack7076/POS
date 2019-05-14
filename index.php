@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li><a href="#"><i class="fa fa-cash-register"></i></a></li>
-                <li><a href="#"><i class="fa fa-sign-out-alt"></i></a></li>
+                <li><a href="#" data-function="modal-logout"><i class="fa fa-sign-out-alt"></i></a></li>
             </ul>
         </div>
         <div class="products">

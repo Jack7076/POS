@@ -15,8 +15,17 @@ $(document).on("click", ".price", (e) => {
     $(el).focus();
 });
 
+$(document).on("click", "a", (e) => {
+    el = $(e.currentTarget);
+
+    if(el.attr("data-function") == "modal-logout"){
+        e.preventDefault();
+        openModal("Logout", "Will add logout function here.");
+    }
+});
+
 $(document).on("focusout", ".price", (e) => {
-    // Stop Default Action
+    // Stop Default Action  
     e.preventDefault();
     // Get current element
     var el = e.currentTarget;
