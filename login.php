@@ -10,10 +10,15 @@
 <body>
     <div id="authenticate">
         <div class="wrapper">
+            <h1>Authenticate</h1>
             <form type="POST" class="authenticateForm">
-                <input type="text">
+                <input id="frmUsrname" type="text" placeholder="Username">
+                <input type="password" id="frmPass" placeholder="Password">
+                <input type="button" value="Login" id="subAuthForm">
             </form>
         </div>
     </div>
+    <script src="script/jquery.min.js"></script>
+    <script src="script/login.js"></script>
 </body>
 </html>

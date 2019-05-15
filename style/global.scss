@@ -320,3 +320,29 @@ $nav-padding: 27px;
     }
 }
 /* End: Modal */
+/* Begin: Login */
+#authenticate {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    background-color: $background-color;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 100px auto auto;
+    text-align: center;
+    .wrapper {
+        background-color: $primary-color;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        input {
+            width: 80%;
+            margin: 15px;
+            padding: 5px;
+            font-size: 1.5em;
+        }
+        h1 {
+            margin-top: 75px;
+            margin-bottom: 25px;
+        }
+    }
+}
+/* End: Login */

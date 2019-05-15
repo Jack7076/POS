@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script/jquery.min.js"></script>
     <script src="script/main.js"></script>
 </body>
 </html>
