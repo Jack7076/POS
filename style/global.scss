@@ -107,6 +107,7 @@ $nav-padding: 27px;
         grid-column-end: 2;
         padding: 25px;
         overflow: auto;
+        transition: 0.2s;
     }
     .products {
         .search {
@@ -157,6 +158,7 @@ $nav-padding: 27px;
         grid-column-end: 3;
         background-color: $cart-color;
         overflow: auto;
+        transition: 0.2s;
     }
     .cart {
         .item-matrix {
@@ -261,6 +263,14 @@ $nav-padding: 27px;
     // End Footer
 }
 /* End: Pos / Content */
+/* Begin: Payment Processor */
+.process {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding: 25px;
+    overflow: auto;
+}
+/* End: Payment Processor */
 /* Begin: Modal */
 .modal {
     display: none;

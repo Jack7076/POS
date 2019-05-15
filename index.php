@@ -41,12 +41,19 @@
                         <br>
                             Total: $<span id="sale-total-tag">0.00</span>
                         </div>
-                        <div class="right"><a href="#" class="btn">Pay Now</a></div>
+                        <div class="right"><a href="#" id="paybtn" class="btn">Pay Now</a></div>
                     </div>
                     
                 </div>
             </div>
         </div>
+
+        <!-- Begin - Payment Processor -->
+
+        <div class="process hidden">
+            <a href="#" id="returnSale" class="btn">Return to Sale</a>
+        </div>
+
         <div id="footer">
             <p>&copy; Prozel Cloud Solutions. <?php echo date("Y"); ?>. All Rights Reserved.</p>
         </div>

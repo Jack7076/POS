@@ -89,7 +89,12 @@ $(document).on("click", ".rmITMcardBTN", (e) => {
 $(document).on("click", ".close-main-modal", (e) => {
     closeModal();
 });
-
+$(document).on('click', "#paybtn", (e) => {
+    requestPayment();
+});
+$(document).on("click", "#returnSale", (e) => {
+    returnPOS();
+});
 $(document).on("click", ".product", (e) => {
     e.preventDefault();
     el = e.currentTarget;
@@ -235,4 +240,17 @@ var filter = (str) => {
 }
 var updateProducts = () => {
     $(".products").load("api/loadProducts.php");
+}
+
+var requestPayment = () => {
+    // Move everything out of the way.
+
+    $(".products").css("transform", "translateX(-100vw)");
+    $(".cart").css("transform", "translateX(-100vw)");
+    $(".process").show();
+}
+var returnPOS = () => {
+    $(".products").css("transform", "");
+    $(".cart").css("transform", "");
+    $(".process").hide();
 }
