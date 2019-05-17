@@ -1,3 +1,8 @@
+<?php
+
+if(isset($_POST['authenticate']))
+    die("success");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +17,8 @@
         <div class="wrapper">
             <h1>Authenticate</h1>
             <form type="POST" class="authenticateForm">
+                <div id="errorBox"></div>
+                <div id="successBox"></div>
                 <input id="frmUsrname" type="text" placeholder="Username">
                 <input type="password" id="frmPass" placeholder="Password">
                 <input type="button" value="Login" id="subAuthForm">

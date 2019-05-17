@@ -1,4 +1,4 @@
-    <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,7 +58,10 @@
             <p>&copy; Prozel Cloud Solutions. <?php echo date("Y"); ?>. All Rights Reserved.</p>
         </div>
     </div>
-
+    <div id="device-size-error">
+        <i class="fa fa-exclamation-triangle warning-symbol"></i>
+        Your screen is too small to fit this web application, please use a larger screen or rotate your device.
+    </div>
     <div class="modal" id="prim-modal">
         <div class="modal-main">
             <div class="close close-main-modal">&times;</div>

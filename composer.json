@@ -1,0 +1,12 @@
+{
+    "name": "prozel/pos",
+    "authors": [
+        {
+            "name": "Jack",
+            "email": "jack@prozel.net"
+        }
+    ],
+    "require": {
+        "teamtnt/tntsearch": "^2.1"
+    }
+}

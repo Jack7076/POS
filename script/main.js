@@ -6,7 +6,16 @@ $(document).ready(() => {
     setInterval(updateProducts, 10000);
 });
 $(document).on("keydown", "*", (e) => {
-    console.log({e});
+    console.log($(e.target).is("input"));
+    if( $( e.target ).attr("editable") == "true"){
+        return;
+    }
+    if( $( e.target ) .is("input") ){
+        return;
+    }
+    else {
+        $("#searchbox").focus();
+    }
 });
 $(document).on("click", ".price", (e) => {
     e.preventDefault();
@@ -85,7 +94,9 @@ $(document).on("click", ".rmITMcardBTN", (e) => {
     removeProduct($(el).attr("data-itmid"));
     closeModal();
 });
-
+$(document).on("change", "#searchbox", (e) => {
+    updateProducts();
+});
 $(document).on("click", ".close-main-modal", (e) => {
     closeModal();
 });
@@ -143,7 +154,7 @@ var addProduct = (quantity, price, name, id) => {
         setTotal();
         return;
     }
-    var template = '<li data-itemno="ITEMID"><span class="quantity">QUANTIYNUMBER</span><span class="item-name">ITEMNAME</span><span class="price">ITEMPRICE</span></li>';
+    var template = '<li data-itemno="ITEMID"><span class="quantity" editable="true">QUANTIYNUMBER</span><span class="item-name">ITEMNAME</span><span class="price" editable="true">ITEMPRICE</span></li>';
     template = template.replace("QUANTIYNUMBER", quantity);
     template = template.replace("ITEMPRICE", formatPrice(price));
     template = template.replace("ITEMNAME", name);
@@ -239,7 +250,15 @@ var filter = (str) => {
     return str;
 }
 var updateProducts = () => {
-    $(".products").load("api/loadProducts.php");
+    try {
+        if($("#searchbox").val != ""){
+            $(".products").load("api/search.php?search=" + $("#searchbox").val());
+        }else {
+            $(".products").load("api/loadProducts.php");
+        }
+    } catch(Exception){
+        $(".products").load("api/loadProducts.php");
+    }    
 }
 
 var requestPayment = () => {
