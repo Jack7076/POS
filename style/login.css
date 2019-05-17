@@ -1,0 +1,24 @@
+.keypad .row {
+  width: 100%;
+}
+
+.keypad .row:first-child {
+  border-top: 1px solid black;
+}
+
+.keypad .row .keypad-number {
+  padding: 30px 30px;
+  color: #fefefe;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.keypad .row .backbtn {
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.keypad .row .keypad-spacer {
+  margin-left: 31px;
+}
+/*# sourceMappingURL=login.css.map */

@@ -76,5 +76,6 @@
 
     <script src="script/jquery.min.js"></script>
     <script src="script/main.js"></script>
+    <script src="script/registerSW.js"></script>
 </body>
 </html>

@@ -8,12 +8,13 @@ $(document).on("click", "#subAuthForm", (e) => {
         password,
         authenticate: true
     }
+    console.log({data});
     $.ajax({
         url: "login.php",
-        type: "POST",
+        type: "post",
         data,
         success: (data) => {
-            console.log({data});
+            console.log(data);
             if(data === "success"){
                 $("#sucessBox").html("Successfuly authenticated. Redirecting ...");
                 $("#successBox").show();
