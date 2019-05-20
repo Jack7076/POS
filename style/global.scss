@@ -44,6 +44,9 @@ $errorColor: #dc3545;
     width: 100%;
     font-size: 6em;
 }
+.btn-warning {
+    background-color: $errorColor;
+}
 %alert {
     padding: 15px;
     display: none;
@@ -160,6 +163,7 @@ $nav-padding: 27px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            transition: 0.2s;
         }
         .product:hover {
             background-color: #0e0e0e;
@@ -233,9 +237,13 @@ $nav-padding: 27px;
                         color: #e2cfcf;
                         font-weight: 700;
                     }
-                    .price {
+                    .del-row-trash {
                         float: right;
                         padding-right: 5px;
+                    }
+                    .price {
+                        float: right;
+                        // padding-right: 5px;
                     }
                     .item-name:hover {
                         cursor: pointer;
@@ -252,17 +260,12 @@ $nav-padding: 27px;
                 width: 100%;
                 text-align: center;
                 display: grid;
-                grid-template-columns: auto;
+                grid-template-columns: auto auto;
                 grid-template-rows: 50px 50px auto;
                 padding-top: 15px;
             }
             .sale-control {
-                .row {
-                    display: grid;
-                    grid-template-columns: auto 150px;
-                    grid-template-rows: auto;
-                }
-                .row {
+                .prices {
                     .left {
                         grid-column-start: 1;
                         grid-column-end: 2;
@@ -272,6 +275,18 @@ $nav-padding: 27px;
                     .right {
                         grid-column-start: 2;
                         grid-column-end: 3;
+                    }
+                }
+                .transact {
+                    grid-row: 3 / 4;
+                    grid-column: 1 / 4;
+                }
+                .transact {
+                    .paybtn-holder {
+                        grid-column: 1 / 2;
+                    }
+                    .clearbtn-holder {
+                        grid-column: 2 / 3;
                     }
                 }
             }
@@ -300,6 +315,36 @@ $nav-padding: 27px;
     grid-row: 2 / 3;
     padding: 25px;
     overflow: auto;
+}
+.process {
+    .back-to-sale {
+        background-color: #fefefe;
+        padding: 15px;
+        width: 150px;
+        text-align: center;
+        transition: 0.2s;
+    }
+    .back-to-sale {
+        i {
+            font-size: 500%;
+            width: 100%;
+            padding: 5px;
+        }
+        span {
+            width: 100%;
+        }
+    }
+    .back-to-sale:hover {
+        transition: 0.2s;
+        cursor: pointer;
+        background-color: #0e0e0e;
+        i {
+            color: #fefefe;
+        }
+        span {
+            color: #fefefe;
+        }
+    }
 }
 /* End: Payment Processor */
 /* Begin: Modal */

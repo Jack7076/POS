@@ -32,7 +32,31 @@ $(document).on("click", "a", (e) => {
         openModal("Logout", "Will add logout function here.");
     }
 });
+$(document).on("click", "#cancelClear", (e) => {
+    $("#clrbtn").attr("data-confirm-status", "0");
+    $("#clrbtn").html("Clear Cart");
+    $(e.currentTarget).hide();
+});
+$(document).on("click", "#clrbtn", (e) => {
+    var el = e.currentTarget;
 
+    if($(el).attr("data-confirm-status") == "1"){
+        $(el).attr("data-confirm-status", "0");
+        $(el).html("Clear Cart");
+        $("#cancelClear").hide();
+        $(cart).html("");
+    }
+    else {
+        $(el).attr("data-confirm-status", "1");
+        $(el).html("Confirm Clear");
+        $("#cancelClear").css("display", "inline-block");
+    }
+
+    setTotal();
+});
+$(document).on("click", "#return-to-sale-btn", (e) => {
+    returnPOS();
+})
 $(document).on("focusout", ".price", (e) => {
     // Stop Default Action  
     e.preventDefault();
@@ -59,6 +83,7 @@ $(document).on("focusout", ".quantity", (e) => {
     e.preventDefault();
     var el = e.currentTarget;
     disableEdit(el);
+    $(el).html(filter($(el).html()));
     setTotal();
 });
 

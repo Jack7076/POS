@@ -7,6 +7,7 @@
     <title>POS Direct - Prozel Cloud Solutions</title>
     <link rel="stylesheet" href="style/global.css" type="text/css">
     <link rel="stylesheet" href="style/fa/all.css">
+    <script src="script/registerSW.js"></script>
 </head>
 <body>
     <div id="pos">
@@ -33,7 +34,7 @@
 
                 </ul>
                 <div class="sale-control">
-                    <div class="row">
+                    <div class="prices">
                         <div class="left">
                             Sub-Total: $<span id="sale-subtotal-tag">0.00</span> 
                         <br>
@@ -41,7 +42,12 @@
                         <br>
                             Total: $<span id="sale-total-tag">0.00</span>
                         </div>
-                        <div class="right"><a href="#" id="paybtn" class="btn">Pay Now</a></div>
+                    </div>
+
+                    <div class="transact">
+                        <div class="paybtn-holder"><a href="#" id="paybtn" class="btn">Pay Now</a></div>
+                        <div class="clearbtn-holder"><a href="#" id="clrbtn" class="btn btn-warning" data-confirm-status="0">Clear Cart</a></div>
+                        <div class="clearbtn-holder"><a href="#" id="cancelClear" class="btn hidden" style="margin-top: 15px;" data-confirm-status="0">Keep Cart</a></div>
                     </div>
                     
                 </div>
@@ -51,7 +57,10 @@
         <!-- Begin - Payment Processor -->
 
         <div class="process hidden">
-            <a href="#" id="returnSale" class="btn">Return to Sale</a>
+            <div class="back-to-sale" id="return-to-sale-btn">
+                <i class="fa fa-arrow-circle-left"></i>
+                <span>Back To Sale</span>
+            </div>
         </div>
 
         <div id="footer">
@@ -76,6 +85,5 @@
 
     <script src="script/jquery.min.js"></script>
     <script src="script/main.js"></script>
-    <script src="script/registerSW.js"></script>
 </body>
 </html>
