@@ -202,7 +202,7 @@ $nav-padding: 27px;
         .item-matrix {
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 50px auto 180px;
+            grid-template-rows: 50px auto 190px;
             height: 100%;
         }
         %item-matrix-row-2 {
@@ -275,21 +275,20 @@ $nav-padding: 27px;
                         text-align: left;
                         padding-left: 24px;
                     }
-                    .right {
-                        grid-column-start: 2;
-                        grid-column-end: 3;
-                    }
                 }
                 .transact {
                     grid-row: 3 / 4;
                     grid-column: 1 / 4;
+                    display: grid;
+                    grid-template-rows: auto;
+                    grid-template-columns: 130px auto;
                 }
                 .transact {
                     .paybtn-holder {
                         grid-column: 1 / 2;
                     }
                     .clearbtn-holder {
-                        grid-column: 2 / 3;
+                        grid-column: 3 / 4;
                     }
                 }
             }

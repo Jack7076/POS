@@ -45,9 +45,13 @@
                     </div>
 
                     <div class="transact">
-                        <div class="paybtn-holder"><a href="#" id="paybtn" class="btn">Pay Now</a></div>
-                        <div class="clearbtn-holder"><a href="#" id="clrbtn" class="btn btn-warning" data-confirm-status="0">Clear Cart</a></div>
-                        <div class="clearbtn-holder"><a href="#" id="cancelClear" class="btn hidden" style="margin-top: 15px;" data-confirm-status="0">Keep Cart</a></div>
+                        <div class="paybtn-holder">
+                            <a href="#" id="paybtn" class="btn">Pay Now</a>
+                        </div>
+                        <div class="clearbtn-holder">
+                            <a href="#" id="clrbtn" class="btn btn-warning" data-confirm-status="0">Clear Cart</a>
+                            <a href="#" id="cancelClear" class="btn hidden" style="margin-top: 15px;" data-confirm-status="0">Keep Cart</a>
+                        </div>
                     </div>
                     
                 </div>

@@ -92,7 +92,7 @@ self.addEventListener('fetch', e => {
     });
 
     if(loadFromCache){
-        console.log("Using Cache");
+        //console.log("Using Cache");
         e.respondWith(
             caches.match(e.request)
         );
@@ -101,7 +101,7 @@ self.addEventListener('fetch', e => {
         if(navigator.onLine !== true){
             e.respondWith(caches.match("offline.html"));
         }
-        console.log("Using Fetch Request");
+        //console.log("Using Fetch Request");
         e.respondWith(
             fetch(e.request).catch(() => caches.match(e.request))
         );

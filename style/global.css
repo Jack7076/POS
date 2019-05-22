@@ -231,8 +231,8 @@
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 50px auto 180px;
-      grid-template-rows: 50px auto 180px;
+  -ms-grid-rows: 50px auto 190px;
+      grid-template-rows: 50px auto 190px;
   height: 100%;
 }
 
@@ -317,12 +317,6 @@
   padding-left: 24px;
 }
 
-#pos .cart .item-matrix .sale-control .prices .right {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 3;
-}
-
 #pos .cart .item-matrix .sale-control .transact {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
@@ -330,6 +324,12 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-columns: 130px auto;
+      grid-template-columns: 130px auto;
 }
 
 #pos .cart .item-matrix .sale-control .transact .paybtn-holder {
@@ -339,9 +339,9 @@
 }
 
 #pos .cart .item-matrix .sale-control .transact .clearbtn-holder {
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  grid-column: 3 / 4;
 }
 
 #pos #footer {
