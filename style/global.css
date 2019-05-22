@@ -48,6 +48,10 @@
   background-color: #dc3545;
 }
 
+.btn-warning:hover {
+  background-color: #c82131;
+}
+
 #errorBox, #successBox {
   padding: 15px;
   display: none;
@@ -369,37 +373,40 @@
   overflow: auto;
 }
 
-.process .back-to-sale {
+.process .process-btn {
+  display: inline-block;
   background-color: #fefefe;
   padding: 15px;
   width: 150px;
   text-align: center;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  margin-bottom: 15px;
+  margin-right: 15px;
 }
 
-.process .back-to-sale i {
+.process .process-btn i {
   font-size: 500%;
   width: 100%;
   padding: 5px;
 }
 
-.process .back-to-sale span {
+.process .process-btn span {
   width: 100%;
 }
 
-.process .back-to-sale:hover {
+.process .process-btn:hover {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   cursor: pointer;
   background-color: #0e0e0e;
 }
 
-.process .back-to-sale:hover i {
+.process .process-btn:hover i {
   color: #fefefe;
 }
 
-.process .back-to-sale:hover span {
+.process .process-btn:hover span {
   color: #fefefe;
 }
 

@@ -1,16 +1,39 @@
 var cart = $("#cart-itm-list");
+var keyPressed = false;
+var page = "pos";
+
 
 $(document).ready(() => {
     setTotal();
     updateProducts();
     setInterval(updateProducts, 10000);
 });
+
+$(document).on("keyup", "*", (e) => {
+    keyPressed = false;
+});
+
 $(document).on("keydown", "*", (e) => {
-    console.log($(e.target).is("input"));
+    if(keyPressed){
+        return;
+    }
+    keyPressed = true;
     if( $( e.target ).attr("editable") == "true"){
         return;
     }
-    if( $( e.target ) .is("input") ){
+    switch(e.key){
+        case "k":
+            if(page == "pos"){
+                requestPayment();
+            }
+            else {
+                returnPOS();
+            }
+        return;
+        break;
+    }
+
+    if( $( e.target ).is("input") ){
         return;
     }
     else {
@@ -288,13 +311,23 @@ var updateProducts = () => {
 
 var requestPayment = () => {
     // Move everything out of the way.
-
+    page = "payment";
     $(".products").css("transform", "translateX(-100vw)");
     $(".cart").css("transform", "translateX(-100vw)");
     $(".process").show();
 }
 var returnPOS = () => {
+
+    page = "pos";
     $(".products").css("transform", "");
     $(".cart").css("transform", "");
     $(".process").hide();
+}
+
+loopOpen = () => {
+    if(page == "payment"){
+        returnPOS();
+    }else {
+        requestPayment();
+    }
 }

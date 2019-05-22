@@ -57,9 +57,25 @@
         <!-- Begin - Payment Processor -->
 
         <div class="process hidden">
-            <div class="back-to-sale" id="return-to-sale-btn">
+            <div class="back-to-sale process-btn" id="return-to-sale-btn">
                 <i class="fa fa-arrow-circle-left"></i>
                 <span>Back To Sale</span>
+            </div>
+            <div class="process-btn">
+                <i class="fa fa-credit-card"></i>
+                <span>Credit Card</span>
+            </div>
+            <div class="process-btn">
+                <i class="fa fa-money-bill-alt"></i>
+                <span>Cash</span>
+            </div>
+            <div class="process-btn">
+                <i class="fa fa-user"></i>
+                <span>Store Credit</span>
+            </div>
+            <div class="process-btn">
+                <i class="fa fa-angry"></i>
+                <span>Laybuy</span>
             </div>
         </div>
 

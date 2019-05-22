@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2019 at 08:02 AM
+-- Generation Time: May 22, 2019 at 07:57 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -43,7 +43,22 @@ INSERT INTO `products` (`ID`, `name`, `price`, `pic`) VALUES
 (4, 'Iraq Lobster', 855, 'products/lobster.jpg'),
 (5, 'Vecal', 25, 'products/vhale.jpg'),
 (6, 'Goat', 799, 'products/giraffe.jpg\r\n'),
-(8, 'Premium Free Range Egg', 900000, 'products/FreerangeEgg.jpg');
+(8, 'Premium Free Range Egg', 900000, 'products/FreerangeEgg.jpg'),
+(9, 'Budget Taco', 75, 'products/taco.jpg'),
+(10, 'Doonkay', 987, 'products/donkey.jpg'),
+(11, 'Shronk', 788, 'products/shronk.jpg'),
+(12, 'Shrokitie', 1, 'products/shrokie.jpg'),
+(13, 'Lord Faquard', 5, 'products/farquard.jpg'),
+(14, 'Crazy Dave and His pet Taco', 10000, 'products/crazyDave.png'),
+(15, 'Sonic', 1, 'products/sanic.jpg'),
+(16, 'Kermit', 855, 'products/kermit.jpg'),
+(17, 'Sassy', 10000, 'products/sossy.jpg'),
+(18, 'Peppa Pog', 699, 'products/pp.jpg'),
+(19, 'Y did U. Y', 900, 'products/regret.gif'),
+(20, 'Jinzo', 5000, 'products/jinzo.jpg'),
+(21, 'Mike Nolan', 855, 'products/mike.jpg'),
+(22, 'No Pic #1', 990, ''),
+(23, 'Florida Man', 588, 'products/hatman.jpg');
 
 -- --------------------------------------------------------
 
@@ -82,7 +97,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
