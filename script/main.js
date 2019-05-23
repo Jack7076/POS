@@ -300,12 +300,12 @@ var filter = (str) => {
 var updateProducts = () => {
     try {
         if($("#searchbox").val != ""){
-            $(".products").load("api/search.php?search=" + $("#searchbox").val());
+            $(".products").load("api/search?search=" + $("#searchbox").val());
         }else {
-            $(".products").load("api/loadProducts.php");
+            $(".products").load("api/loadProducts");
         }
     } catch(Exception){
-        $(".products").load("api/loadProducts.php");
+        $(".products").load("api/loadProducts");
     }    
 }
 
