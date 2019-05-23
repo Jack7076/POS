@@ -1,7 +1,15 @@
 <?php
+require_once __DIR__ . "/php/authentication.php";
 
-if(isset($_POST['username'])){
-    die("success");
+if(authenticated()){
+    header("Location: index");
+    die("Already Authenticated");
+}
+
+if(isset($_POST['pin'])){
+    if(authenticate($_POST['pin']))
+        die("success");
+    die("invalid");
 }
 
 ?>
@@ -21,9 +29,14 @@ if(isset($_POST['username'])){
         <div class="wrapper">
             <h1>Authenticate</h1>
 
+            <div class="store-details">
+                <h2>Prozel Systems</h2>
+                <p>Please login using your provided PIN</p>
+                <div class="errorBox" id="errorBoxLoginAuth"></div>
+            </div>  
             <div class="keypad">
-                <span class="currentCode" id="currentCode">****</span>
-                <div class="row">
+                <div class="currentCode" id="currentCode"></div>
+                <div class="row border-row">
                     <span class="keypad-number">1</span>
                     <span class="keypad-number">2</span>
                     <span class="keypad-number">3</span>
@@ -39,12 +52,16 @@ if(isset($_POST['username'])){
                     <span class="keypad-number">9</span>
                 </div>
                 <div class="row">
-                    <span class="keypad-number keypad-spacer"></span>
+                    <span class="keypad-spacer"></span>
                     <span class="keypad-number">0</span>
-                    <span class="keypad-number"><i class="fa fa-backspace backbtn"></i></span>
+                    <span class="keypad-number backholder"><i class="fa fa-backspace backbtn"></i></span>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="device-size-error">
+        <i class="fa fa-exclamation-triangle warning-symbol"></i>
+        Your screen is too small to fit this web application, please use a larger screen or rotate your device.
     </div>
     <script src="script/jquery.min.js"></script>
     <script src="script/login.js"></script>

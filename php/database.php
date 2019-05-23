@@ -12,3 +12,17 @@ $searchConfig = [
     'storage' => __DIR__ . "/indexes/",
     'stemmer' => \TeamTNT\TNTSearch\Stemmer\PorterStemmer::class
 ];
+
+function getUserData($id, $property){
+    global $conn;
+
+    $query = $conn->prepare("SELECT * FROM users WHERE ID = :id");
+
+    $query->execute([
+        "id"       => $id
+    ]);
+
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+
+    return $result[$property];
+}

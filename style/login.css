@@ -1,16 +1,76 @@
-.keypad .row {
-  width: 100%;
+#authenticate {
+  background-color: #073546;
 }
 
-.keypad .row:first-child {
-  border-top: 1px solid black;
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #56C1A8), color-stop(50%, #fff));
+  background-image: linear-gradient(to right, #56C1A8 50%, #fff 50%);
+  background-color: #fff;
+}
+
+.wrapper h1 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  color: #0e0e0e;
+}
+
+.store-details {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+}
+
+.store-details p {
+  padding: 15px;
+}
+
+.keypad {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+.errorBox {
+  color: red;
+  font-weight: 700;
+  text-align: center;
+}
+
+.keypad .row {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.keypad .border-row {
+  border-top: 1px solid #E0E0E0;
 }
 
 .keypad .row .keypad-number {
-  padding: 30px 30px;
-  color: #fefefe;
+  padding: 30px;
+  color: #0e0e0e;
   font-size: 1.5em;
   font-weight: 700;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .keypad .row .backbtn {
@@ -18,7 +78,27 @@
   font-size: 0.9em;
 }
 
+.keypad .row .backholder {
+  padding-left: 20px;
+}
+
 .keypad .row .keypad-spacer {
-  margin-left: 31px;
+  margin-left: 23px;
+  padding: 30px;
+}
+
+#currentCode {
+  -webkit-text-security: disc;
+  font-size: 3em;
+  height: 68px;
+}
+
+@media only screen and (max-width: 610px) {
+  #authenticate {
+    display: none;
+  }
+  #device-size-error {
+    display: block;
+  }
 }
 /*# sourceMappingURL=login.css.map */

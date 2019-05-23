@@ -421,7 +421,6 @@ $nav-padding: 27px;
     grid-template-rows: 100px auto auto;
     text-align: center;
     .wrapper {
-        background-color: $primary-color;
         grid-row: 2 / 3;
         grid-column: 2 / 3;
         input {

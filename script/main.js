@@ -52,7 +52,7 @@ $(document).on("click", "a", (e) => {
 
     if(el.attr("data-function") == "modal-logout"){
         e.preventDefault();
-        openModal("Logout", "Will add logout function here.");
+        openModal("Logout", `<a href="logout" class="btn btn-warning">Logout</a>`);
     }
 });
 $(document).on("click", "#cancelClear", (e) => {

@@ -1,3 +1,12 @@
+<?php
+require_once __DIR__ . "/php/authentication.php";
+
+if(!authenticated()){
+    header("Location: login");
+    die("Please login to continue.");
+}
+
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -14,7 +23,7 @@
         <div id="nav">
             <div class="brand">POS Direct</div>
             <div class="control">
-                <i class="fa fa-user"></i> Jack (jack@prozel.net)
+                <i class="fa fa-user"></i> <?php echo getUserData($_SESSION['ID'], "fname"); ?> (<?php echo getUserData($_SESSION['ID'], "email"); ?>)
             </div>
         </div>
         <div class="sidebar">

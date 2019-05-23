@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2019 at 07:57 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: May 23, 2019 at 11:16 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -68,10 +68,19 @@ INSERT INTO `products` (`ID`, `name`, `price`, `pic`) VALUES
 
 CREATE TABLE `users` (
   `ID` int(7) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `access` varchar(255) NOT NULL
+  `fname` varchar(255) NOT NULL DEFAULT 'John',
+  `lname` varchar(255) NOT NULL DEFAULT 'Snow',
+  `email` varchar(255) NOT NULL,
+  `pin` varchar(255) NOT NULL DEFAULT 'No Pin Set',
+  `access` varchar(255) NOT NULL DEFAULT 'None'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`ID`, `fname`, `lname`, `email`, `pin`, `access`) VALUES
+(1, 'Jack', 'Jameson', 'jack@prozel.net', 'pzlhash7842620d0df0878481f4e35721170ce6f6a2efb0250499e2c39f7b48880d6feb3c8d3481254dbd1c2adaf97d51458821abeadd91c30d992829e5fda91f624e83', 'All');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +112,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(7) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

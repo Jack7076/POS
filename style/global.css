@@ -488,7 +488,6 @@
 }
 
 #authenticate .wrapper {
-  background-color: #3498db;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;

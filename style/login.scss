@@ -1,23 +1,79 @@
+#authenticate {
+    background-color: #073546;
+}
+.wrapper {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    background-image: linear-gradient(to right, #56C1A8 50%, #fff 50%);
+    background-color: #fff;
+}
+.wrapper {
+    h1 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        color: #0e0e0e;
+    }
+}
+.store-details {
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+}
+.store-details {
+    p {
+        padding: 15px;
+    }
+}
+.keypad {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+.errorBox {
+    color: red;
+    font-weight: 700;
+
+    text-align: center;
+}
 .keypad { 
     .row {
         width: 100%;
+        padding-top: 30px;
     }
-    .row:first-child {
-        border-top: 1px solid black;
+    .border-row {
+        border-top: 1px solid #E0E0E0;
     }
     .row {
         .keypad-number {
-            padding: 30px 30px;
-            color: #fefefe;
+            padding: 30px;
+            color: #0e0e0e;
             font-size: 1.5em;
             font-weight: 700;
+            cursor: pointer;
+            user-select: none;
         }
         .backbtn {
             text-align: right;
             font-size: 0.9em;
         }
-        .keypad-spacer {
-            margin-left: 31px;
+        .backholder {
+            padding-left: 20px;
         }
+        .keypad-spacer {
+            margin-left: 23px;
+            padding: 30px;
+        }
+    }
+}
+#currentCode {
+    -webkit-text-security: disc;
+    font-size: 3em;
+    height: 68px;
+}
+@media only screen and (max-width: 610px){
+    #authenticate {
+        display: none;
+    }
+    #device-size-error {
+        display: block;
     }
 }
