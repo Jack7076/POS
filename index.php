@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/php/authentication.php";
 
-if(!authenticated()){
+if(!hasAccess(10)){
     header("Location: login");
     die("Please login to continue.");
 }
@@ -30,6 +30,13 @@ if(!authenticated()){
             <ul>
                 <li><a href="#"><i class="fa fa-home"></i></a></li>
                 <li><a href="#"><i class="fa fa-cash-register"></i></a></li>
+                <?php
+                if(hasAccess(100)){
+                    ?>
+                <li><a href="admin" target="_blank"><i class="fa fa-cog"></i></a></li>                    
+                    <?php
+                }
+                ?>
                 <li><a href="#" data-function="modal-logout"><i class="fa fa-sign-out-alt"></i></a></li>
             </ul>
         </div>
@@ -74,19 +81,19 @@ if(!authenticated()){
                 <i class="fa fa-arrow-circle-left"></i>
                 <span>Back To Sale</span>
             </div>
-            <div class="process-btn">
+            <div class="process-btn transact" data-process="card">
                 <i class="fa fa-credit-card"></i>
                 <span>Credit Card</span>
             </div>
-            <div class="process-btn">
+            <div class="process-btn transact" data-process="cash">
                 <i class="fa fa-money-bill-alt"></i>
                 <span>Cash</span>
             </div>
-            <div class="process-btn">
+            <div class="process-btn transact" data-process="stcred">
                 <i class="fa fa-user"></i>
                 <span>Store Credit</span>
             </div>
-            <div class="process-btn">
+            <div class="process-btn transact" data-process="laybuy">
                 <i class="fa fa-angry"></i>
                 <span>Laybuy</span>
             </div>

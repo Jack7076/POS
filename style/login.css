@@ -1,5 +1,10 @@
+body {
+  background-color: #073546;
+}
+
 #authenticate {
   background-color: #073546;
+  height: 100vh;
 }
 
 .wrapper {
@@ -12,6 +17,7 @@
   background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #56C1A8), color-stop(50%, #fff));
   background-image: linear-gradient(to right, #56C1A8 50%, #fff 50%);
   background-color: #fff;
+  min-height: 500px;
 }
 
 .wrapper h1 {
@@ -93,7 +99,7 @@
   height: 68px;
 }
 
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 900px) {
   #authenticate {
     display: none;
   }

@@ -3,6 +3,8 @@ require_once __DIR__ . "/php/authentication.php";
 
 if(!authenticated())
     die("This is no place for a Skid");
+if(!hasAccess(1000))
+    die("No access. You can request access from your supervisor.");
 if(isset($_POST['calc'])){
     die(computeHash($_POST['calc']));
 }
@@ -24,6 +26,19 @@ if(isset($_POST['calc'])){
     <div id="output"></div>
     <script src="script/jquery.min.js"></script>
     <script>
+        $(document).on("keyup", "#calcHash", () => {
+            var calc = $("#calcHash").val();
+            $.ajax({
+                url: "admin",
+                type: "post",
+                data: {
+                    calc
+                },
+                success: (data) => {
+                    $("#output").html(data);
+                }
+            });
+        });
         $(document).on("click", "#calcBtn", () => {
             var calc = $("#calcHash").val();
             $.ajax({

@@ -63,6 +63,25 @@ function authenticated(){
 
     if($res['pin'] === $_SESSION['pin'])
         return true;
+    logout();
+    return false;
+}
+
+function hasAccess($level){
+    global $conn;
+    if(!authenticated())
+        return false;
+    $query = $conn->prepare("SELECT users.access, access.name, access.level
+    FROM users INNER JOIN access ON users.access=access.name 
+    WHERE users.ID = :id");
+    $query->execute([
+        "id" => $_SESSION['ID']
+    ]);
+
+    $res = $query->fetch(PDO::FETCH_ASSOC);
+    if($res['level'] >= $level){
+        return true;
+    }
     return false;
 }
 

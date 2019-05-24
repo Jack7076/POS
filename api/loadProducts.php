@@ -1,6 +1,11 @@
 <div class="search"><input type="text" id="searchbox" placeholder="Search"></div>
 <?php
 require_once __DIR__ . "/../php/database.php";
+require_once __DIR__ . "/../php/authentication.php";
+
+if(!authenticated()){
+    die("Please login.");
+}
 
 $query = $conn->prepare("SELECT * FROM products");
 

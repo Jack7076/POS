@@ -30,7 +30,9 @@ $(document).on("keydown", "*", (e) => {
                 returnPOS();
             }
         return;
-        break;
+        case "o":
+            window.location = "logout";
+            return;
     }
 
     if( $( e.target ).is("input") ){
@@ -40,6 +42,38 @@ $(document).on("keydown", "*", (e) => {
         $("#searchbox").focus();
     }
 });
+
+$(document).on("click", ".transact", (e) => {
+    e.preventDefault();
+    switch($(e.currentTarget).attr("data-process")){
+        case "cash":
+            var customer = "unset";
+            var items = serializeCart();
+            items = JSON.stringify(items);
+            $.ajax({
+                url: "api/commitSale",
+                type: "post",
+                data: {
+                    items,
+                    customer
+                },
+                success: (data) => {
+                    if(data == "success"){
+                        console.log("Successfuly Submitted");
+                        cleanCart();
+                        returnPOS();
+                    }
+                    else {
+                        alert("Something went wrong. Please try again.");
+                    }
+                }
+            });
+            return;
+        default:
+            return;
+    }
+});
+
 $(document).on("click", ".price", (e) => {
     e.preventDefault();
     var el = e.toElement;
@@ -169,7 +203,7 @@ var removeProduct = (id) => {
     for(let i = 0; i < itms.length; i++){
         if( $(itms[i]).attr("data-itemno") == id){
             $(itms[i]).remove();
-            break;
+            
         }
         continue;
     }
@@ -189,7 +223,7 @@ var addProduct = (quantity, price, name, id) => {
         if( $( itms[i] ).attr("data-itemno") == id) {
             found = true;
             elid = i;
-            break;
+            
         }
         else {
             continue;
@@ -300,16 +334,55 @@ var filter = (str) => {
 var updateProducts = () => {
     try {
         if($("#searchbox").val != ""){
-            $(".products").load("api/search?search=" + $("#searchbox").val());
+            var url = "api/search?search=" + $("#searchbox").val();
+            $.ajax({
+                url,
+                type: "get",
+                success: (data) => {
+                    if($(".products").html() != data){
+                        $(".products").html(data);
+                    }
+                }
+            });
+
+            // $(".products").load("api/search?search=" + $("#searchbox").val());
         }else {
-            $(".products").load("api/loadProducts");
+            $.ajax({
+                url: "api/loadProducts",
+                type: "get",
+                success: (data) => {
+                    if($(".products").html() != data){
+                        console.log("Updating Products: ");
+                        var current = $(".products").html();
+                        $(".products").html(data);
+                    }
+                }
+            });
+            // $(".products").load("api/loadProducts");
         }
     } catch(Exception){
-        $(".products").load("api/loadProducts");
+        $.ajax({
+            url: "api/loadProducts",
+            type: "get",
+            success: (data) => {
+                if($(".products").html() != data){
+                    console.log("Updating Products: ");
+                    var current = $(".products").html();
+                    console.log({data, current});
+                    $(".products").html(data);
+                }
+            }
+        });
+        // $(".products").load("api/loadProducts");
     }    
 }
 
 var requestPayment = () => {
+    if(isEmpty(serializeCart())){
+        alert("Please add 1 or more items to process a sale.");
+        return;
+    }
+
     // Move everything out of the way.
     page = "payment";
     $(".products").css("transform", "translateX(-100vw)");
@@ -324,10 +397,34 @@ var returnPOS = () => {
     $(".process").hide();
 }
 
-loopOpen = () => {
-    if(page == "payment"){
-        returnPOS();
-    }else {
-        requestPayment();
+var serializeCart = () => {
+    // Get all items
+    var itms = $("#cart-itm-list").find("li");
+    var json = {};
+    // Loop all items.
+    for(let i = 0; i < itms.length; i++){
+        var quant = $(itms[i]).find(".quantity");
+        quant = $(quant).html();
+        var name = $(itms[i]).find(".item-name");
+        name = $(name).html();
+        var price = $(itms[i]).find(".price");
+        price = $(price).html();
+        var extension = `{"${i}":{"quant" : "${quant}","name" : "${name}","price" : "${price}"}}`;
+        extension = JSON.parse(extension);
+        json = Object.assign(json, extension);
     }
+    return json;
+}
+
+var cleanCart = () => {
+    $(cart).html("");
+    setTotal();
+}
+
+var isEmpty = (obj) => {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
 }

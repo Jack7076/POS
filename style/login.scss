@@ -1,5 +1,9 @@
+body {
+    background-color: #073546;
+}
 #authenticate {
     background-color: #073546;
+    height: 100vh;
 }
 .wrapper {
     display: grid;
@@ -7,6 +11,7 @@
     grid-template-columns: auto auto auto auto;
     background-image: linear-gradient(to right, #56C1A8 50%, #fff 50%);
     background-color: #fff;
+    min-height: 500px;
 }
 .wrapper {
     h1 {
@@ -69,7 +74,7 @@
     font-size: 3em;
     height: 68px;
 }
-@media only screen and (max-width: 610px){
+@media only screen and (max-width: 900px){
     #authenticate {
         display: none;
     }

@@ -54,7 +54,7 @@ if(isset($_POST['pin'])){
                 <div class="row">
                     <span class="keypad-spacer"></span>
                     <span class="keypad-number">0</span>
-                    <span class="keypad-number backholder"><i class="fa fa-backspace backbtn"></i></span>
+                    <span class="keypad-number backholder" data-control="Backspace"><i class="fa fa-backspace backbtn"></i></span>
                 </div>
             </div>
         </div>

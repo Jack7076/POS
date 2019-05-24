@@ -4,12 +4,6 @@ $(document).on("click", "#subAuthForm", (e) => {
     var pin = $("#currentCode").html();
     authenticate(pin);
 });
-$(document).on("keydown", "*", (e) => {
-    if(e.originalEvent.key == "Enter"){
-        e.preventDefault();
-        $("#subAuthForm").click();
-    }
-});
 
 var authenticate = (pin) => {
     var data = {
@@ -41,6 +35,10 @@ var authenticate = (pin) => {
 var keyPressed = false;
 $(document).on("click", ".keypad-number", (e) => {
     var num = $(e.currentTarget).html();
+    var attr = $(e.currentTarget).attr("data-control");
+    if(typeof attr !== typeof undefined && attr !== false){
+        num = attr;
+    }
     addNum(num);
 });
 
@@ -59,7 +57,9 @@ $(document).on("keyup", "*", (e) => {
 });
 
 var addNum = (num) => {
-
+    if(num == "Backspace"){
+        $("#currentCode").html($("#currentCode").html().slice(0, -1));
+    }
     num = filter(num);
 
     $("#currentCode").html(
@@ -68,6 +68,7 @@ var addNum = (num) => {
     
     var leng = $("#currentCode").html().length;
     var code = $("#currentCode").html();
+
     if(leng >= 4){
         $("#currentCode").html("");
         authenticate(code);
