@@ -7,8 +7,8 @@ body {
 }
 .wrapper {
     display: grid;
-    grid-template-rows: auto auto auto auto;
-    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 100px auto auto 100px;
+    grid-template-columns: 100px auto auto 100px;
     background-image: linear-gradient(to right, #56C1A8 50%, #fff 50%);
     background-color: #fff;
     min-height: 500px;
@@ -80,5 +80,8 @@ body {
     }
     #device-size-error {
         display: block;
+    }
+    body {
+        background-color: #fff;
     }
 }
