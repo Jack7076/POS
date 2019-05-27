@@ -116,7 +116,7 @@
       grid-template-rows: 75px auto 50px;
 }
 
-#pos .sidebar, #pos .products, #pos .cart {
+#pos .sidebar, #pos .products, #pos .cart, #dashboard {
   -ms-grid-row: 2;
       grid-row-start: 2;
   grid-row-end: 3;
@@ -411,6 +411,14 @@
 }
 
 /* End: Payment Processor */
+/* Begin: Dash */
+#dashboard {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+/* End: Dash */
 /* Begin: Modal */
 .modal {
   display: none;

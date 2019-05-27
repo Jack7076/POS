@@ -352,6 +352,13 @@ $nav-padding: 27px;
     }
 }
 /* End: Payment Processor */
+/* Begin: Dash */
+#dashboard {
+    @extend %grid-row-2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+/* End: Dash */
 /* Begin: Modal */
 .modal {
     display: none;

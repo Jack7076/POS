@@ -28,8 +28,14 @@ if(!hasAccess(10)){
         </div>
         <div class="sidebar">
             <ul>
-                <li><a href="#"><i class="fa fa-home"></i></a></li>
-                <li><a href="#"><i class="fa fa-cash-register"></i></a></li>
+            <?php
+                if(hasAccess(20)){
+                    ?>                    
+                    <li><a href="#dash"><i class="fa fa-home"></i></a></li>
+                    <?php
+                }
+                ?>
+                <li><a href="#sell"><i class="fa fa-cash-register"></i></a></li>
                 <?php
                 if(hasAccess(100)){
                     ?>
@@ -118,7 +124,10 @@ if(!hasAccess(10)){
             </p>
         </div>
     </div>
-
+    <!-- BEGIN Dashboard -->
+    <div id="dashboard">
+        <?php require_once __DIR__ . "/api/dash.php"; ?>
+    </div>
     <script src="script/jquery.min.js"></script>
     <script src="script/main.js"></script>
 </body>

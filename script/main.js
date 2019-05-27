@@ -1,11 +1,13 @@
 var cart = $("#cart-itm-list");
 var keyPressed = false;
 var page = "pos";
-
+var productsContainer = $(".products");
+var dash = $("#dashboard");
 
 $(document).ready(() => {
     setTotal();
     updateProducts();
+    loadHash();
     setInterval(updateProducts, 10000);
 });
 
@@ -83,7 +85,7 @@ $(document).on("click", ".price", (e) => {
 
 $(document).on("click", "a", (e) => {
     el = $(e.currentTarget);
-
+    loadHash();
     if(el.attr("data-function") == "modal-logout"){
         e.preventDefault();
         openModal("Logout", `<a href="logout" class="btn btn-warning">Logout</a>`);
@@ -427,4 +429,27 @@ var isEmpty = (obj) => {
             return false;
     }
     return true;
+}
+
+var loadHash = () => {
+    switch(window.location.hash){
+        case "#dash":
+            $(productsContainer).hide();
+            $(cart).hide();
+            $(dash).show();
+            console.log("Show Dash");
+            return;
+        case "#sell":
+            $(productsContainer).show();
+            $(cart).show();
+            $(dash).hide();
+            console.log("Hide Dash");
+            return;
+        default:
+            $(productsContainer).show();
+            $(cart).show();
+            $(dash).hide();
+            console.log("Hide default Dash");
+            return;
+    }
 }
