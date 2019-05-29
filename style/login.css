@@ -10,10 +10,10 @@ body {
 .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto auto auto auto;
-      grid-template-rows: auto auto auto auto;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
+  -ms-grid-rows: 100px auto auto 100px;
+      grid-template-rows: 100px auto auto 100px;
+  -ms-grid-columns: 100px auto auto 100px;
+      grid-template-columns: 100px auto auto 100px;
   background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #56C1A8), color-stop(50%, #fff));
   background-image: linear-gradient(to right, #56C1A8 50%, #fff 50%);
   background-color: #fff;
@@ -105,6 +105,9 @@ body {
   }
   #device-size-error {
     display: block;
+  }
+  body {
+    background-color: #fff;
   }
 }
 /*# sourceMappingURL=login.css.map */
