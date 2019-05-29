@@ -354,9 +354,9 @@ $nav-padding: 27px;
 /* End: Payment Processor */
 /* Begin: Dash */
 #dashboard {
-    @extend %grid-row-2;
-    grid-column-start: 2;
-    grid-column-end: 2;
+    padding: 15px;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
 }
 /* End: Dash */
 /* Begin: Modal */

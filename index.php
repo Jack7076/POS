@@ -23,7 +23,7 @@ if(!hasAccess(10)){
         <div id="nav">
             <div class="brand">POS Direct</div>
             <div class="control">
-                <i class="fa fa-user"></i> <?php echo getUserData($_SESSION['ID'], "fname"); ?> (<?php echo getUserData($_SESSION['ID'], "email"); ?>)
+                <i data-function="modal-logout" class="fa fa-user"></i> <?php echo getUserData($_SESSION['ID'], "fname"); ?> (<?php echo getUserData($_SESSION['ID'], "email"); ?>)
             </div>
         </div>
         <div class="sidebar">
@@ -105,6 +105,11 @@ if(!hasAccess(10)){
             </div>
         </div>
 
+        <!-- BEGIN Dashboard -->
+        <div id="dashboard">
+            <?php require_once __DIR__ . "/api/dash.php"; ?>
+        </div>
+
         <div id="footer">
             <p>&copy; Prozel Cloud Solutions. <?php echo date("Y"); ?>. All Rights Reserved.</p>
         </div>
@@ -123,10 +128,6 @@ if(!hasAccess(10)){
                 Please wait while the modal loads.
             </p>
         </div>
-    </div>
-    <!-- BEGIN Dashboard -->
-    <div id="dashboard">
-        <?php require_once __DIR__ . "/api/dash.php"; ?>
     </div>
     <script src="script/jquery.min.js"></script>
     <script src="script/main.js"></script>

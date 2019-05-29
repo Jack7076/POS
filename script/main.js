@@ -44,7 +44,9 @@ $(document).on("keydown", "*", (e) => {
         $("#searchbox").focus();
     }
 });
-
+$(window).on("hashchange", () => {
+    loadHash();
+});
 $(document).on("click", ".transact", (e) => {
     e.preventDefault();
     switch($(e.currentTarget).attr("data-process")){
@@ -85,7 +87,6 @@ $(document).on("click", ".price", (e) => {
 
 $(document).on("click", "a", (e) => {
     el = $(e.currentTarget);
-    loadHash();
     if(el.attr("data-function") == "modal-logout"){
         e.preventDefault();
         openModal("Logout", `<a href="logout" class="btn btn-warning">Logout</a>`);
@@ -436,6 +437,7 @@ var loadHash = () => {
         case "#dash":
             $(productsContainer).hide();
             $(cart).hide();
+            $("#dashboard").load("api/dash");
             $(dash).show();
             console.log("Show Dash");
             return;
@@ -452,4 +454,8 @@ var loadHash = () => {
             console.log("Hide default Dash");
             return;
     }
+}
+
+var updateChart = () => {
+    $("#dashboard").load("api/dash");
 }
