@@ -459,3 +459,28 @@ var loadHash = () => {
 var updateChart = () => {
     $("#dashboard").load("api/dash");
 }
+
+var inactivityTime = () => {
+
+    console.log("Started Timer");
+    var time;
+    window.onload = resetTimer;
+
+    //DOM Events
+    document.onmousemove  = resetTimer;
+    document.onkeypress   = resetTimer;
+    document.ontouchstart = resetTimer;
+    document.onmousedown  = resetTimer;
+    
+    function logout(){
+        window.location = "logout";
+    }
+
+    function resetTimer(){
+        console.log("Timer Cleared");
+        clearTimeout(time);
+        time = setTimeout(logout, 60000);
+    }
+};
+
+inactivityTime();
