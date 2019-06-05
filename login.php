@@ -35,7 +35,7 @@ if(isset($_POST['pin'])){
                 <div class="errorBox" id="errorBoxLoginAuth"></div>
             </div>  
             <div class="keypad">
-                <div class="currentCode" id="currentCode"></div>
+                <div class="currentCode" type="password" id="currentCode"></div>
                 <div class="row border-row">
                     <span class="keypad-number">1</span>
                     <span class="keypad-number">2</span>

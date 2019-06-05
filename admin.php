@@ -24,6 +24,34 @@ if(isset($_POST['calc'])){
     <input type="button" value="Calculate" id="calcBtn">
     <br>
     <div id="output"></div>
+    <br>
+    <?php 
+    $query = $conn->prepare("SELECT * FROM sales WHERE saledate>= :from AND saledate< :to");
+    $to = date("Y-m-d");
+    $from = date("Y-m-d", strtotime("-5 day"));
+    $query->execute([
+        "from" => $from,
+        "to"   => $to
+    ]);
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+    $dates = [];
+    foreach ($results as $sale) {
+        $date = new DateTime(strtotime($sale['saledate']));
+        $saledateArrTemp = [
+             $date->format("d/m/Y") => [
+
+            ]
+        ];
+        array_push($dates, $saledateArrTemp);
+    }
+
+    $dates = array_unique($dates);
+
+    foreach($dates as $date){
+        
+    }
+
+    ?>
     <script src="script/jquery.min.js"></script>
     <script>
         $(document).on("keyup", "#calcHash", () => {

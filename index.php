@@ -15,10 +15,14 @@ if(!hasAccess(10)){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POS Direct - Prozel Cloud Solutions</title>
     <link rel="stylesheet" href="style/global.css" type="text/css">
-    <link rel="stylesheet" href="style/fa/all.css">
+    <link rel="stylesheet" href="style/fa/all.css" type="text/css">
+    <link rel="stylesheet" href="style/loader.css" type="text/css">
     <script src="script/registerSW.js"></script>
 </head>
 <body>
+    <div id="loader-container">
+    <div id="loader-pre"></div>
+    </div>
     <div id="pos">
         <div id="nav">
             <div class="brand">POS Direct</div>
@@ -131,5 +135,6 @@ if(!hasAccess(10)){
     </div>
     <script src="script/jquery.min.js"></script>
     <script src="script/main.js"></script>
+    <script src="script/loaded.js"></script>
 </body>
 </html>

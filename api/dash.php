@@ -4,6 +4,9 @@ if(!hasAccess(20)){
     echo "Error: You do not have access to the Dashboard. You can request access from your supervisor.";
 }else {
     // echo "Success. Authenticated, access level is above 20.";
+    $query = $conn->prepare("SELECT * FROM sales WHERE saledate>= :from AND saledate< :to");
+    $to = date("Y-m-d");
+    $from = date("Y-m-d", strtotime("-5 day"));
     ?>
     <canvas id="chart"></canvas>
     <script src="script/Chart.min.js"></script>

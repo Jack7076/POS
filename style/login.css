@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'text-security-disc';
+  src: url("webfonts/text-security-disc.eot");
+  src: url("webfonts/text-security-disc.eot?#iefix") format("embedded-opentype"), url("webfonts/text-security-disc.woff2") format("woff2"), url("webfonts/text-security-disc.woff") format("woff"), url("webfonts/text-security-disc.ttf") format("truetype"), url("webfonts/text-security-disc.svg#text-security") format("svg");
+}
+
 body {
   background-color: #073546;
 }
@@ -95,6 +101,7 @@ body {
 
 #currentCode {
   -webkit-text-security: disc;
+  font-family: 'text-security-disc';
   font-size: 3em;
   height: 68px;
 }
