@@ -3,7 +3,7 @@ var keyPressed = false;
 var page = "pos";
 var productsContainer = $(".products");
 var dash = $("#dashboard");
-var autologout = true;
+var autologout = false;
 
 
 $(document).ready(() => {

@@ -7,8 +7,12 @@ if(authenticated()){
 }
 
 if(isset($_POST['pin'])){
-    if(authenticate($_POST['pin']))
+    if(authenticate($_POST['pin'])){
         die("success");
+    }
+    if(isset($_SESSION['lockout'])){
+        die("lockout");
+    }
     die("invalid");
 }
 

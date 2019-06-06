@@ -2,7 +2,9 @@
 
 require __DIR__ . "/../vendor/autoload.php";
 $conn = new PDO("mysql:host=127.0.0.1;dbname=pos", "root", "");
-
+if(isset($_SERVER["HTTP_CF_CONNECTING_IP"])){
+    $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+}
 $searchConfig = [
     'driver' => 'mysql',
     'host' => '127.0.0.1',

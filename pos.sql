@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2019 at 06:52 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Jun 06, 2019 at 08:05 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,6 +42,19 @@ INSERT INTO `access` (`ID`, `name`, `level`) VALUES
 (1, 'Admin', 100),
 (2, 'User', 20),
 (3, 'All', 100000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lockout`
+--
+
+CREATE TABLE `lockout` (
+  `ID` int(12) NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  `attempts` int(12) NOT NULL,
+  `timeout` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -143,6 +156,12 @@ ALTER TABLE `access`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `lockout`
+--
+ALTER TABLE `lockout`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -169,6 +188,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `access`
   MODIFY `ID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `lockout`
+--
+ALTER TABLE `lockout`
+  MODIFY `ID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `products`

@@ -12,7 +12,6 @@ var authenticate = (pin) => {
         pin,
         authenticate: true
     }
-    console.log({data});
     $.ajax({
         url: "login",
         type: "post",
@@ -27,8 +26,13 @@ var authenticate = (pin) => {
                     case "invalid":
                         $("#errorBoxLoginAuth").html("Error: Your PIN was invalid!");
                         break;
+                    case "lockout":
+                        $("#errorBoxLoginAuth").html("Error: Too many attempts! <br> You have been locked out for 5 hours");
+                        $(".keypad").hide();
+                        break;
                     default:
                         $("#errorBoxLoginAuth").html("Error: An unknown error has occured! Please try again.");
+                        break;
                 }
 
             }
