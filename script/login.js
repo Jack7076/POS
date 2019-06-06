@@ -6,6 +6,8 @@ $(document).on("click", "#subAuthForm", (e) => {
 });
 
 var authenticate = (pin) => {
+    $(".keypad-loader").show();
+    $(".keypad").hide();
     var data = {
         pin,
         authenticate: true
@@ -16,10 +18,11 @@ var authenticate = (pin) => {
         type: "post",
         data,
         success: (data) => {
-            console.log(data);
             if(data === "success"){
                 window.location = "index";
             } else {
+                $(".keypad-loader").hide();
+                $(".keypad").show();
                 switch(data){
                     case "invalid":
                         $("#errorBoxLoginAuth").html("Error: Your PIN was invalid!");
@@ -29,7 +32,11 @@ var authenticate = (pin) => {
                 }
 
             }
-        }
+        },
+    error: () => {
+        $(".keypad-loader").hide();
+        $(".keypad").show();
+    }
     });
 }
 var keyPressed = false;

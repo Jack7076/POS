@@ -20,11 +20,15 @@ if(isset($_POST['pin'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Authenticate - POS Direct</title>
+    <link rel="stylesheet" href="style/loader.css" type="text/css">
     <link rel="stylesheet" href="style/global.css" type="text/css">
     <link rel="stylesheet" href="style/login.css" type="text/css">
     <link rel="stylesheet" href="style/fa/all.css">
 </head>
 <body>
+    <div id="loader-container" style="background-color: #073546;">
+    <div id="loader-pre" style="border-top: 16px solid #56C1A8;"></div>
+    </div>
     <div id="authenticate">
         <div class="wrapper">
             <h1>Authenticate</h1>
@@ -34,6 +38,7 @@ if(isset($_POST['pin'])){
                 <p>Please login using your provided PIN</p>
                 <div class="errorBox" id="errorBoxLoginAuth"></div>
             </div>  
+            <div class="keypad-loader"></div>
             <div class="keypad">
                 <div class="currentCode" type="password" id="currentCode"></div>
                 <div class="row border-row">
@@ -66,5 +71,6 @@ if(isset($_POST['pin'])){
     <script src="script/jquery.min.js"></script>
     <script src="script/login.js"></script>
     <script src="script/registerSW.js"></script>
+    <script src="script/loaded.js"></script>
 </body>
 </html>
