@@ -22,7 +22,12 @@ const cacheAssets = [
     '/style/webfonts/fa-regular-400.woff',
     '/style/webfonts/fa-regular-400.eot',
     '/style/webfonts/fa-regular-400.svg',
-    '/style/webfonts/fa-regular-400.ttf'
+    '/style/webfonts/fa-regular-400.ttf',
+    '/style/webfonts/fa-light-300.woff2',
+    '/style/webfonts/fa-light-300.woff',
+    '/style/webfonts/fa-light-300.eot',
+    '/style/webfonts/fa-light-300.svg',
+    '/style/webfonts/fa-light-300.ttf'
 ];
 const alwaysLoadFromCache = [
     '/offline.html',
@@ -43,7 +48,12 @@ const alwaysLoadFromCache = [
     '/style/webfonts/fa-regular-400.woff',
     '/style/webfonts/fa-regular-400.eot',
     '/style/webfonts/fa-regular-400.svg',
-    '/style/webfonts/fa-regular-400.ttf'
+    '/style/webfonts/fa-regular-400.ttf',
+    '/style/webfonts/fa-light-300.woff2',
+    '/style/webfonts/fa-light-300.woff',
+    '/style/webfonts/fa-light-300.eot',
+    '/style/webfonts/fa-light-300.svg',
+    '/style/webfonts/fa-light-300.ttf'
 ]
 
 // Install Service Worker:
