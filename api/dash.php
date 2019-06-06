@@ -8,7 +8,9 @@ if(!hasAccess(20)){
     $to = date("Y-m-d");
     $from = date("Y-m-d", strtotime("-5 day"));
     ?>
-    <canvas id="chart"></canvas>
+    <div id="chart-container">
+        <canvas id="chart"></canvas>
+    </div>
     <script src="script/Chart.min.js"></script>
     <script>
         var ctx = document.getElementById("chart").getContext('2d');

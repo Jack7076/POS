@@ -439,6 +439,9 @@ var loadHash = () => {
         case "#dash":
             $(productsContainer).hide();
             $(".cart").hide();
+            if(page == "payment"){
+                $(".process").hide();
+            }
             $("#dashboard").load("api/dash");
             $(dash).show();
             $(dash).css("grid-column", "2 / 4");
@@ -447,18 +450,27 @@ var loadHash = () => {
             $(productsContainer).show();
             $(".cart").show();
             $(dash).css("grid-column", "2 / 3");
+            if(page == "payment"){
+                $(".process").show();
+            }
             $(dash).hide();
             return;
         case "#prodman":
-            $(productsContainer).show();
+            $(productsContainer).hide();
             $(".cart").hide();
             $(dash).css("grid-column", "2 / 4");
+            if(page == "payment"){
+                $(".process").hide();
+            }
             $(dash).hide();
             return;
         default:
             $(productsContainer).show();
             $(".cart").show();
             $(dash).hide();
+            if(page == "payment"){
+                $(".process").show();
+            }
             return;
     }
 }

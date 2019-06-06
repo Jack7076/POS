@@ -29,7 +29,7 @@ if(!hasAccess(10)){
         <div id="nav">
             <div class="brand">POS Direct</div>
             <div class="control">
-                <i data-function="modal-logout" class="fa fa-user"></i> <?php echo getUserData($_SESSION['ID'], "fname"); ?> (<?php echo getUserData($_SESSION['ID'], "email"); ?>)
+                <i data-function="modal-logout" class="fal fa-user"></i> <?php echo getUserData($_SESSION['ID'], "fname"); ?> (<?php echo getUserData($_SESSION['ID'], "email"); ?>)
             </div>
         </div>
         <div class="sidebar">
@@ -37,20 +37,20 @@ if(!hasAccess(10)){
             <?php
                 if(hasAccess(20)){
                     ?>                    
-                    <li><a href="#dash"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#dash"><i class="fal fa-home"></i></a></li>
                     <?php
                 }
                 ?>
-                <li><a href="#sell"><i class="fa fa-cash-register"></i></a></li>
+                <li><a href="#sell"><i class="fal fa-cash-register"></i></a></li>
                 <?php
                 if(hasAccess(100)){
                     ?>
-                <li><a href="#prodman"><i class="fa fa-warehouse"></i></a></li>                    
-                <li><a href="admin" target="_blank"><i class="fa fa-cog"></i></a></li>                    
+                <li><a href="#prodman"><i class="fal fa-abacus"></i></a></li>                    
+                <li><a href="admin" target="_blank"><i class="fal fa-cog"></i></a></li>                    
                     <?php
                 }
                 ?>
-                <li><a href="#" data-function="modal-logout"><i class="fa fa-sign-out-alt"></i></a></li>
+                <li><a href="#" data-function="modal-logout"><i class="fal fa-sign-out-alt"></i></a></li>
             </ul>
         </div>
         <div class="products">
@@ -91,23 +91,23 @@ if(!hasAccess(10)){
 
         <div class="process hidden">
             <div class="back-to-sale process-btn" id="return-to-sale-btn">
-                <i class="fa fa-arrow-circle-left"></i>
+                <i class="fal fa-arrow-circle-left"></i>
                 <span>Back To Sale</span>
             </div>
             <div class="process-btn transact" data-process="card">
-                <i class="fa fa-credit-card"></i>
+                <i class="fal fa-credit-card"></i>
                 <span>Credit Card</span>
             </div>
             <div class="process-btn transact" data-process="cash">
-                <i class="fa fa-money-bill-alt"></i>
+                <i class="fal fa-money-bill-alt"></i>
                 <span>Cash</span>
             </div>
             <div class="process-btn transact" data-process="stcred">
-                <i class="fa fa-user"></i>
+                <i class="fal fa-user"></i>
                 <span>Store Credit</span>
             </div>
             <div class="process-btn transact" data-process="laybuy">
-                <i class="fa fa-angry"></i>
+                <i class="fal fa-receipt"></i>
                 <span>Laybuy</span>
             </div>
         </div>
