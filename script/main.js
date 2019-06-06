@@ -3,6 +3,8 @@ var keyPressed = false;
 var page = "pos";
 var productsContainer = $(".products");
 var dash = $("#dashboard");
+var autologout = true;
+
 
 $(document).ready(() => {
     setTotal();
@@ -436,22 +438,27 @@ var loadHash = () => {
     switch(window.location.hash){
         case "#dash":
             $(productsContainer).hide();
-            $(cart).hide();
+            $(".cart").hide();
             $("#dashboard").load("api/dash");
             $(dash).show();
-            console.log("Show Dash");
+            $(dash).css("grid-column", "2 / 4");
             return;
         case "#sell":
             $(productsContainer).show();
-            $(cart).show();
+            $(".cart").show();
+            $(dash).css("grid-column", "2 / 3");
             $(dash).hide();
-            console.log("Hide Dash");
+            return;
+        case "#prodman":
+            $(productsContainer).show();
+            $(".cart").hide();
+            $(dash).css("grid-column", "2 / 4");
+            $(dash).hide();
             return;
         default:
             $(productsContainer).show();
-            $(cart).show();
+            $(".cart").show();
             $(dash).hide();
-            console.log("Hide default Dash");
             return;
     }
 }
@@ -473,7 +480,9 @@ var inactivityTime = () => {
     document.onmousedown  = resetTimer;
     
     function logout(){
-        window.location = "logout";
+        if(autologout){
+            window.location = "logout";
+        }
     }
 
     function resetTimer(){

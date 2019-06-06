@@ -18,6 +18,8 @@ if(!hasAccess(10)){
     <link rel="stylesheet" href="style/fa/all.css" type="text/css">
     <link rel="stylesheet" href="style/loader.css" type="text/css">
     <script src="script/registerSW.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="loader-container">
@@ -43,6 +45,7 @@ if(!hasAccess(10)){
                 <?php
                 if(hasAccess(100)){
                     ?>
+                <li><a href="#prodman"><i class="fa fa-warehouse"></i></a></li>                    
                 <li><a href="admin" target="_blank"><i class="fa fa-cog"></i></a></li>                    
                     <?php
                 }

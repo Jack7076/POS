@@ -485,6 +485,12 @@
 }
 
 /* End: Modal */
+/* Begin: Chart */
+#chart {
+  width: 40%;
+}
+
+/* End: Chart */
 /* Begin: Login */
 #authenticate {
   width: 100%;

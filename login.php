@@ -24,6 +24,8 @@ if(isset($_POST['pin'])){
     <link rel="stylesheet" href="style/global.css" type="text/css">
     <link rel="stylesheet" href="style/login.css" type="text/css">
     <link rel="stylesheet" href="style/fa/all.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="loader-container" style="background-color: #073546;">
