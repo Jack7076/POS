@@ -37,6 +37,25 @@ $font: "Open Sans", sans-serif;
         font-size: 0.6em;
         text-align: center;
     }
+    .nav-list {
+        margin-top: 30px;
+        margin-left: 55px;
+        list-style: none;
+    }
+    .nav-list {
+        li {
+            a {
+                width: 100%;
+                color: #fff;
+                font-size: 1.2em;
+                text-align: center;
+                text-decoration: none;
+            }
+            a:hover {
+                background-color: #25364A + 20;
+            }
+        }
+    }
 }
 /* End: Navigation */
 

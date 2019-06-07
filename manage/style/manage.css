@@ -46,6 +46,24 @@
   text-align: center;
 }
 
+#nav .nav-list {
+  margin-top: 30px;
+  margin-left: 55px;
+  list-style: none;
+}
+
+#nav .nav-list li a {
+  width: 100%;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: none;
+}
+
+#nav .nav-list li a:hover {
+  background-color: #394a5e;
+}
+
 /* End: Navigation */
 /* End: Content */
 /*# sourceMappingURL=manage.css.map */

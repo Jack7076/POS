@@ -16,6 +16,14 @@
             <div class="brand-subtext">
                 Backend Management
             </div>
+
+            <ul class="nav-list">
+                <li><a href="#"><i class="fal fa-home"></i> Home</a></li>
+                <li><a href="#"> Sales</a></li>
+                <li><a href="#"> Stock</a></li>
+                <li><a href="#"> Product Orders</a></li>
+                <li><a href="#"> Logout</a></li>
+            </ul>
         </div>
     </div>
 </body>
