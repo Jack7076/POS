@@ -46,7 +46,7 @@ if(!hasAccess(10)){
                 if(hasAccess(100)){
                     ?>
                 <li><a href="#prodman"><i class="fal fa-abacus"></i></a></li>                    
-                <li><a href="admin" target="_blank"><i class="fal fa-cog"></i></a></li>                    
+                <li><a href="manage/index" target="_blank"><i class="fal fa-cog"></i></a></li>                    
                     <?php
                 }
                 ?>
