@@ -1,6 +1,9 @@
 <?php
 
 require __DIR__ . "/../vendor/autoload.php";
+
+ini_set('session.name', 'PROZELCGI');
+
 $conn = new PDO("mysql:host=127.0.0.1;dbname=pos", "root", "");
 if(isset($_SERVER["HTTP_CF_CONNECTING_IP"])){
     $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
