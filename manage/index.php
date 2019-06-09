@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Management - POS Direct</title>
     <link rel="stylesheet" href="style/manage.css" type="text/css">
+    <link rel="stylesheet" href="../style/fa/all.min.css" type="text/css">
 </head>
 <body>
     <div id="container">
@@ -18,13 +19,15 @@
             </div>
 
             <ul class="nav-list">
-                <li><a href="#"><i class="fal fa-home"></i> Home</a></li>
-                <li><a href="#"> Sales</a></li>
-                <li><a href="#"> Stock</a></li>
-                <li><a href="#"> Product Orders</a></li>
-                <li><a href="#"> Logout</a></li>
+                <li class="nav-list-item"><a href="#home"><i class="fal fa-home"></i> Home</a></li>
+                <li class="nav-list-item"><a href="#sales"><i class="fal fa-chart-bar"></i> Sales</a></li>
+                <li class="nav-list-item"><a href="#stock"><i class="fal fa-warehouse-alt"></i> Stock</a></li>
+                <li class="nav-list-item"><a href="#po"><i class="fal fa-clipboard-list"></i> Product Orders</a></li>
+                <li class="nav-list-item"><a href="../logout"><i class="fal fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
     </div>
+    <script src="../script/jquery.min.js"></script>
+    <script src="script/management.js"></script>
 </body>
 </html>

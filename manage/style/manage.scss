@@ -13,12 +13,14 @@ $font: "Open Sans", sans-serif;
     display: grid;
     grid-template-columns: 300px auto;
     grid-template-rows: auto;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 /* Begin: Navigation */
 #nav {
     grid-column: 1 / 2;
     background-color: #25364A;
-    height: 100vh;
+    min-height: 100vh;
     width: 300px;
     position: fixed;
 }
@@ -39,21 +41,29 @@ $font: "Open Sans", sans-serif;
     }
     .nav-list {
         margin-top: 30px;
-        margin-left: 55px;
+        // margin-left: 55px;
         list-style: none;
     }
     .nav-list {
         li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 100%;
             a {
-                width: 100%;
+                margin-left: 55px;
                 color: #fff;
                 font-size: 1.2em;
-                text-align: center;
                 text-decoration: none;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                i {
+                    min-width: 30px;
+                }
             }
-            a:hover {
-                background-color: #25364A + 20;
-            }
+        }
+        li:hover {
+            background-color: #25364A + 20;
+            cursor: pointer;
         }
     }
 }

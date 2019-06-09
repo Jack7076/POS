@@ -50,7 +50,7 @@ if(!hasAccess(10)){
                     <?php
                 }
                 ?>
-                <li><a href="#" data-function="modal-logout"><i class="fal fa-sign-out-alt"></i></a></li>
+                <li><a href="#" data-function="modal-logout"><i class="fal fa-sign-out"></i></a></li>
             </ul>
         </div>
         <div class="products">
