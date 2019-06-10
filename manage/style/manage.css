@@ -93,6 +93,7 @@
       grid-template-columns: 50px auto auto 50px;
   -ms-grid-rows: 250px auto;
       grid-template-rows: 250px auto;
+  background-color: #e8ecf1;
 }
 
 /* Begin: Dash */
@@ -146,7 +147,7 @@
       grid-template-columns: 25% auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-  background-color: #2980b9;
+  background-color: #6c7a89;
   border-radius: 5px;
 }
 

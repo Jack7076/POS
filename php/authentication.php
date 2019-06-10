@@ -170,3 +170,21 @@ function hasAccess($level){
 function logout(){
     session_destroy();
 }
+
+function filterToNumber($string){
+    $res = preg_replace('/[^0-9.]/', "", $string);
+    $res = floatval($res);
+    return $res;
+}
+
+function countUsers(){
+    global $conn;
+    $query = $conn->prepare("SELECT ID FROM users");
+    $query->execute();
+    $resp = $query->fetchAll(PDO::FETCH_ASSOC);
+    $count = 0;
+    foreach ($resp as $user) {
+        $count++;
+    }
+    return $count;
+}
