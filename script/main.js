@@ -174,7 +174,14 @@ $(document).on("click", ".item-name", (e) => {
         </div>
      `);
 });
-
+$(document).on("click", ".extPageKeepAlive", (e) => {
+    autologout = false;
+    console.log("auto logout disabled.");
+});
+$(window).on("focus", (e) => {
+   autologout = true; 
+   console.log("auto logout re-enabled.");
+});
 $(document).on("click", ".rmITMcardBTN", (e) => {
     e.preventDefault();
     el = e.currentTarget;

@@ -23,6 +23,7 @@ $font: "Open Sans", sans-serif;
     min-height: 100vh;
     width: 300px;
     position: fixed;
+    box-shadow: 10px 10px 5px grey;
 }
 #nav {
     .brand {
@@ -54,8 +55,11 @@ $font: "Open Sans", sans-serif;
                 color: #fff;
                 font-size: 1.2em;
                 text-decoration: none;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                // padding-top: 10px;
+                // padding-bottom: 10px;
+                display: block;
+                width: 100%;
+                height: 100%;
                 i {
                     min-width: 30px;
                 }
@@ -68,5 +72,68 @@ $font: "Open Sans", sans-serif;
     }
 }
 /* End: Navigation */
+/* Begin: Prim zone */
+#content {
+    grid-column: 2 / 3;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50px auto auto 50px;
+    grid-template-rows: 250px auto;
+}
 
+/* Begin: Dash */
+.chart-holder {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+.dash-gross-profit {
+    grid-column: 1 / 2;
+}
+.dash-total-sales {
+    grid-column: 2 / 3;
+}
+.dash-users {
+    grid-column: 3 / 4;
+}
+.dash-reports {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 7px;
+    margin-top: 15px;
+}
+.dash-box {
+    padding: 5px 5px;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: auto auto;
+    background-color: #2980b9;
+    border-radius: 5px;
+}
+.dash-box {
+    i {
+        display: inline-block;
+        font-size: 5em;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+    .title {
+        font-size: 1.1em;
+        width: 100%;
+        display: block;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .value {
+        font-size: 1.6em;
+        width: 100%;
+        display: block;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+/* End: Dash */
+
+/* End: Prim zone */
 /* End: Content */

@@ -7,8 +7,12 @@
     <title>Management - POS Direct</title>
     <link rel="stylesheet" href="style/manage.css" type="text/css">
     <link rel="stylesheet" href="../style/fa/all.min.css" type="text/css">
+    <link rel="stylesheet" href="../style/loader.css" type="text/css">
 </head>
 <body>
+    <div id="loader-container">
+    <div id="loader-pre"></div>
+    </div>
     <div id="container">
         <div id="nav">
             <div class="brand">
@@ -21,13 +25,19 @@
             <ul class="nav-list">
                 <li class="nav-list-item"><a href="#home"><i class="fal fa-home"></i> Home</a></li>
                 <li class="nav-list-item"><a href="#sales"><i class="fal fa-chart-bar"></i> Sales</a></li>
-                <li class="nav-list-item"><a href="#stock"><i class="fal fa-warehouse-alt"></i> Stock</a></li>
+                <li class="nav-list-item"><a href="#stock"><i class="fal fa-warehouse-alt"></i> Inventory</a></li>
                 <li class="nav-list-item"><a href="#po"><i class="fal fa-clipboard-list"></i> Product Orders</a></li>
                 <li class="nav-list-item"><a href="../logout"><i class="fal fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
+
+        <div id="content">
+            Loading ... Please Wait.
+        </div>
     </div>
     <script src="../script/jquery.min.js"></script>
     <script src="script/management.js"></script>
+    <script src="../script/Chart.min.js"></script>
+    <script src="../script/loaded.js"></script>
 </body>
 </html>

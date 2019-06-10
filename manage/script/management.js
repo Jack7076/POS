@@ -1,8 +1,27 @@
-$(document).on("click", ".nav-list-item", (e) => {
-    target = $(e.currentTarget)[0].target;
-    e.preventDefault();
-    console.log({target});
-    target = target.children[0];
-    $(target).click();
-    console.log({target});
+var loadHash = () => {
+    switch(window.location.hash){
+        case "#stock":
+            $("#content").load("api/inventory");
+            return;
+        case "#sales":
+            $("#content").load("api/sales");
+            return;
+        case "#po":
+            $("#content").load("api/po");
+            return;
+        case "#home":
+            $("#content").load("api/dash");
+            return;
+        default:
+            $("#content").load("api/dash");
+            return;
+    }
+}
+
+$(document).ready(() => {
+    loadHash();
+});
+
+$(window).on("hashchange", () => {
+    loadHash();
 });
