@@ -1,3 +1,11 @@
+<?php
+require_once __DIR__ . "/../php/authentication.php";
+
+if(!hasAccess(70)){
+    header("location: ../index");
+    die("Woops you has no access!");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

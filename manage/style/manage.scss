@@ -8,6 +8,9 @@ $font: "Open Sans", sans-serif;
     box-sizing: border-box;
     font-family: $font;
 }
+html {
+    overflow-x: hidden;
+}
 /* Begin: Content */
 #container {
     display: grid;
@@ -23,7 +26,7 @@ $font: "Open Sans", sans-serif;
     min-height: 100vh;
     width: 300px;
     position: fixed;
-    box-shadow: 10px 10px 5px grey;
+    // box-shadow: 10px -10px 5px grey;
 }
 #nav {
     .brand {
@@ -135,6 +138,39 @@ $font: "Open Sans", sans-serif;
     }
 }
 /* End: Dash */
-
+/* Begin: Sales */
+.sales-date-range {
+    grid-column: 1 / 4;
+}
+.sales-table {
+    grid-column: 2 / 4;
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.sales-table {
+    thead {
+        font-weight: 700;
+        border-bottom: 3px solid #000;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    thead tr td {
+        padding-left: 7px;
+    }
+    tbody tr td {
+        padding: 7px;
+        text-align: left;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #e8ecf1 - 30;
+    }
+    // thead tr:hover, 
+    tbody tr:hover {
+        background-color: #e8ecf1 - 60;
+    }
+}
+/* End: Sales */
 /* End: Prim zone */
 /* End: Content */

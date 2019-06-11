@@ -1,6 +1,10 @@
 <?php
 require_once __DIR__ . "/../../php/authentication.php";
 
+if(!hasAccess(70)){
+    header("location: ../index");
+    die("Woops you has no access!");
+}
 $query = $conn->prepare("SELECT * FROM sales WHERE saledate BETWEEN :from AND :to;");
 $to = date("Y-m-d", strtotime("+1 day"));
 $from = date("Y-m-d", strtotime("-5 day"));
@@ -17,9 +21,10 @@ foreach ($results as $sale) {
         $price = filterToNumber($item['price']);
         $val = $price * filterToNumber($item['quant']);
         $salevalue += $val;
-        $sales++;
     }
+    $sales++;
 }
+$salevalue = number_format((float)$salevalue, 2, '.', '');
 ?>
 <div class="dash-reports">
     <div class="dash-gross-profit">
