@@ -5,38 +5,21 @@ if(!hasAccess(70)){
     header("location: ../index");
     die("Woops you has no access!");
 }
-$query = $conn->prepare("SELECT * FROM sales WHERE saledate BETWEEN :from AND :to;");
-$to = date("Y-m-d", strtotime("+1 day"));
-$from = date("Y-m-d", strtotime("-5 day"));
-$query->execute([
-"from" => $from,
-"to"   => $to
-]);
-$results = $query->fetchAll(PDO::FETCH_ASSOC);
-$salevalue = 0;
-$sales = 0;
-foreach ($results as $sale) {
-    $products = json_decode($sale['products'], true);
-    foreach ($products as $item) {
-        $price = filterToNumber($item['price']);
-        $val = $price * filterToNumber($item['quant']);
-        $salevalue += $val;
-    }
-    $sales++;
-}
-$salevalue = number_format((float)$salevalue, 2, '.', '');
+
+$data = saleData("-5 day", "+1 day");
+
 ?>
 <div class="dash-reports">
     <div class="dash-gross-profit">
         <div class="dash-box">
             <i class="fal fa-usd-circle"></i>
-            <span class="title">Gross Profit:</span> <span class="value">$<?php echo $salevalue; ?></span>
+            <span class="title">Gross Profit:</span> <span class="value">$<?php echo $data['totalValue']; ?></span>
         </div>
     </div>
     <div class="dash-total-sales">
         <div class="dash-box">
             <i class="fal fa-receipt"></i>
-            <span class="title">Sales:</span> <span class="value"><?php echo $sales; ?></span>
+            <span class="title">Sales:</span> <span class="value"><?php echo $data['totalsales']; ?></span>
         </div>
     </div>
     <div class="dash-users">
@@ -52,6 +35,16 @@ $salevalue = number_format((float)$salevalue, 2, '.', '');
 </div>
 
 <script>
+    $.ajax({
+        url: "?api=true&request=sales-chart-data",
+        type: "get",
+        success: (data) => {
+            console.log({data});
+        },
+        error: (data) => {
+            alert("Failed to get Chart data! Please report this error!");
+        }
+    });
         var ctx = document.getElementById("dash-sales-chart").getContext('2d');
         var chart = new Chart(ctx, {
             type: "line",
@@ -62,7 +55,7 @@ $salevalue = number_format((float)$salevalue, 2, '.', '');
                         label: "Sale Volume",
                         data: [1, 40, 20, 30],
                         backgroundColor: [
-                            "#e4f1fe"
+                            "#3783B4"
                         ]
 
                     },

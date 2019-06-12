@@ -5,6 +5,24 @@ if(!hasAccess(70)){
     header("location: ../index");
     die("Woops you has no access!");
 }
+
+if(isset($_GET['api'])){
+    if($_GET['api'] == "false"){
+        die("Api Request without params!");
+    }
+    if(!isset($_GET['request'])){
+        die("No data requested!");
+    }
+
+    switch($_GET['request']){
+        case "sales-chart-data":
+            die("Incomplete Function");
+            break;
+        default:
+            die("No handler defined!");
+            break;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -53,7 +53,7 @@ $sales = 0;
             }
             echo '</td>';
             echo '<td>';
-            echo number_format((float)$currentPrice, 2, '.', '');
+            echo "$" . number_format((float)$currentPrice, 2, '.', '');
             echo '</td>';
             echo '<td>';
             echo "None";
