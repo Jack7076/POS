@@ -37,7 +37,7 @@ if(isset($_GET['api'])){
 </head>
 <body>
     <div id="loader-container">
-    <div id="loader-pre"></div>
+        <div class="loader-pre"></div>
     </div>
     <div id="container">
         <div id="nav">

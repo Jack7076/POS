@@ -23,7 +23,7 @@ if(!hasAccess(10)){
 </head>
 <body>
     <div id="loader-container">
-    <div id="loader-pre"></div>
+    <div class="loader-pre"></div>
     </div>
     <div id="pos">
         <div id="nav">

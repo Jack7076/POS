@@ -33,7 +33,7 @@ if(isset($_POST['pin'])){
 </head>
 <body>
     <div id="loader-container" style="background-color: #073546;">
-    <div id="loader-pre" style="border-top: 16px solid #56C1A8;"></div>
+    <div class="loader-pre" style="border-top: 16px solid #56C1A8;"></div>
     </div>
     <div id="authenticate">
         <div class="wrapper">

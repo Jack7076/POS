@@ -11,6 +11,10 @@ $font: "Open Sans", sans-serif;
 html {
     overflow-x: hidden;
 }
+.loader-pre {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
 /* Begin: Content */
 #container {
     display: grid;
