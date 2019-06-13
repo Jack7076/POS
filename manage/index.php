@@ -15,9 +15,6 @@ if(isset($_GET['api'])){
     }
 
     switch($_GET['request']){
-        case "sales-chart-data":
-            die("Incomplete Function");
-            break;
         default:
             die("No handler defined!");
             break;

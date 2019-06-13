@@ -24,10 +24,16 @@ function saleData($from, $to){
     }
     $salevalue = number_format((float)$salevalue, 2, '.', '');
 
+    $newRes = [];
+    foreach ($results as $sale) {
+        array_push($sale, ["jsdate" => date("Y-m-d", strtotime($sale['saledate']))]);
+        array_push($newRes, $sale);
+    }
+
     $parse = [
         "totalValue" => $salevalue,
-        "sales" => $results,
-        "totalsales" => $sales
+        "sales" => $newRes,
+        "totalsales" => $sales,
     ];
 
     return $parse;
